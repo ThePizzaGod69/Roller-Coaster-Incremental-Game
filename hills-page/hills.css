@@ -19,10 +19,10 @@
     border-radius: 5px;
   }
   
-  #Hen{
-    margin-left: 40%;
-    margin-right: 50%;
-    margin-bottom: 25%;
+  #hillReset{
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-bottom: 25px;
     font-size: 13px;
     padding-left: 40px;
     padding-right: 40px;
@@ -30,10 +30,45 @@
     padding-bottom: 20px;
   }
   
-  #money{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    flex-direction: row;
-  
+  .upgradeBoxes{
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
+  #up1{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+   #up2{
+     padding-left: 40px;
+     padding-right: 40px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+   }
+  #up3{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #up4{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #up5{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  }
+  

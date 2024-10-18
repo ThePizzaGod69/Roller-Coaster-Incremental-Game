@@ -1,0 +1,74 @@
+#topButtons{
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  #le{
+    border-radius: 5px;
+  }
+  
+  #hi{
+    border-radius: 5px;
+  }
+  
+  #in{
+    border-radius: 5px;
+  }
+  
+  #th{
+    border-radius: 5px;
+  }
+  
+  #themeReset{
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .buyableBoxes{
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #buy1{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+   #buy2{
+     padding-left: 40px;
+     padding-right: 40px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+   }
+  #buy3{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #buy4{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #buy5{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  }
+  
