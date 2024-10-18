@@ -1,0 +1,39 @@
+#topButtons{
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  #le{
+    border-radius: 5px;
+  }
+  
+  #hi{
+    border-radius: 5px;
+  }
+  
+  #in{
+    border-radius: 5px;
+  }
+  
+  #th{
+    border-radius: 5px;
+  }
+  
+  #Hen{
+    margin-left: 40%;
+    margin-right: 50%;
+    margin-bottom: 25%;
+    font-size: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  #money{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+  
+  }
