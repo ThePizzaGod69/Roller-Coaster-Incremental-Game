@@ -6,31 +6,31 @@
     <title>Roller Coaster Incremental</title> 
     <link href='hills.css' rel='stylesheet' type='text/css' /> 
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
-    <script src='idk.js' defer></script> 
+    <script src='hills.js' defer></script> 
   </head> 
   <body> 
-    <div id="topButtons">
+    <header>
+      <div class="riderCount">
+      <h2 id="riderText">You have 0 riders</h2>
+      <h3 id="riderGainText">You are getting 0 riders per second</h2>
+    </div>
+    <h2 id="hillText">Your coaster has 0 hills</h2>
+  </header>
+    <navv id="topButtons">
       <a href="length.html"><button>length</button></a>
       <button>hills</button>
       <a href="inversions.html"><button>inversions</button></a>
       <a href="theming.html"><button>theming</button></a>
-    </div>
-    <div class="resourceText">
-      <div class="riderCount">
-      <h2 id="riderText">You have NaN riders</h2>
-      <h3 id="riderGainText">You are getting NaN riders per Second</h2>
-    </div>
-    <h2 id="hillText">Your coaster has NaN hills</h2>
-    </div>
-    <button id="hillReset">Reset your riders and length buyables for 1 Hill next at 1986 riders</button>
+    </nav>
+    <button id="hillReset">Reset your riders and length buyables for 1 Hill: next at 1986 riders</button>
     <div class="upgradeBoxes">
-      <button id="up1">Multiple riders by 5
+      <button id="hill1">Multiply riders by 5
         Cost: 3 Hills</button>
-        <button id="up2">Keep all the first lenght buyables on reset
+        <button id="hill2">Keep all the first length buyables on reset
         Cost: 3 Hills</button>
-      <button id="up3">Upgrade3</button>
-      <button id="up4">Upgrade4</button>
-      <button id="up5">Upgrade5</button>
+      <button id="hill3">Upgrade3</button>
+      <button id="hill4">Upgrade4</button>
+      <button id="hill5">Upgrade5</button>
     </div>
     
   </body> 

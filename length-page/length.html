@@ -6,20 +6,25 @@
     <title>Roller Coaster Incremental</title> 
     <link href='length.css' rel='stylesheet' type='text/css' /> 
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
-    <script src='idk.js' defer></script> 
+    <script src='length.js' defer></script> 
   </head> 
-  <div class="top-buttons">
+  <body>
+    <header>
+        <div class="riderCount">
+        <h2 id="riderText">You have 0 riders</h2>
+        <h3 id="riderGainText">You are getting 0 riders per second</h2>
+        </div>
+        <h2 id="lengthText">Your coaster is 0 meters long</h2>
+      </header>
+  <nav class="top-buttons">
     <button>length</button>
     <a href="hills.html"><button>hills</button></a>
     <a href="inversions.html"><button>inversions</button></a>
     <a href="theming.html"><button>theming</button></a>
-  </div>
-  <div class="resourceText">
-  <div class="riderCount">
-  <h2 id="riderText">You have NaN riders</h2>
-  <h3 id="riderGainText">You are getting NaN riders per Second</h2>
-</div>
-<h2 id="lengthText">Your coaster is NaN meters long</h2>
+  </nav>
+
+
+
 </div>
   <div class="lengthBuyables">
     <button id="length1">Press this to get 1 more meter of length</button>
@@ -28,4 +33,5 @@
     <button id="length4">Press this to get 10 more meters of length</button>
   </div>
   <button id="hillsUnlock">Press here to unlock hills</button>
+  </body>
   </html> 
