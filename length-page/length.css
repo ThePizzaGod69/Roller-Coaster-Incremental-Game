@@ -2,3 +2,19 @@
     display:flex;
     justify-content:space-around;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#topButtons{
+    display: flex;
+    justify-content: space-around;
+    button{
+     padding: 50px;   
+    }
+  
+  }
+
+  
