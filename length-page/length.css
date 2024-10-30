@@ -2,9 +2,19 @@
     display:flex;
     justify-content:space-around;
 }
-.riderCount{
-    display:flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    grid-row:1 / span 2;
+
+header {
+    display: flex;
+    justify-content: space-between;
 }
+
+#topButtons{
+    display: flex;
+    justify-content: space-around;
+    button{
+     padding: 50px;   
+    }
+  
+  }
+
+  
