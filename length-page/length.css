@@ -6,4 +6,5 @@
     display:flex;
     justify-content: flex-end;
     align-items: baseline;
+    grid-row:1 / span 2;
 }
