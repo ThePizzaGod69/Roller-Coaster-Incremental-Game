@@ -1,8 +1,12 @@
-#topButtons{
-    display: flex;
-    justify-content: space-around;
-  
-  }
+.top-buttons{
+  display:flex;
+  justify-content:space-around;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
   #themeReset{
     margin-left: 40px;
     margin-right: 50px;
