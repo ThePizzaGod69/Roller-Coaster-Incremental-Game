@@ -15,6 +15,7 @@
         <h3 id="riderGainText">You are getting 0 riders per second</h2>
           </div>
       <h2 id="inversionText">Your coaster has 0 inversions</h2>
+      <!--Amount of total inversions.-->
     </header>
     <nav id="topButtons">
       <a href="length.html"><button>length</button></a>
@@ -25,22 +26,36 @@
 
     <button id="inversionsReset">Reset all previous progress for
     1 inversion: next at 350 hills</button>
+    <!--By reseting all previous progress you can gain an inversion which is the resource for this page.-->
     <div class="buyableBoxes">
-      <button id="inversions1">
+      <button id="inversion1">
         Corkscrew
 Cost: 1 inversion
 increases all length buyables by 0.1</button>
-        <button id="inversions2">Vertical Loop
+    <!--Lets you increase your length buyablesby 0.1.-->
+        <button id="inversion2">Vertical Loop
           Cost: 1 inversion
-          makes hill gain ^1.1
+          makes hill gain ^1.05
+          <!--Lets you make a vertical loop a hill gain.-->
        </button>
-      <button id="inversions3">Roll
+      <button id="inversion3">Roll
         Cost: 1 inversion
-        makes rider gain ^1.25</button>
+        makes rider gain ^1.1</button>
+        <!--Rider gain increase.-->
       <br>
-      <button id="inversions4">Buyable4</button>
-      <button id="inversions5">Buyable5</button>
-      <button id="inversions6">Buyable6</button>
+      <button id="inversion4">Dive Loop
+        Cost: 5 inversions
+        rider gain *6.9
+      </button>
+      <button id="inversion5">Batwing
+        Cost: 10 inversions
+        hill gain *10
+      </button>
+      <button id="inversion6">Pretzel Knot
+        Cost: 25 inversions
+        makes rider gain ^1.5
+      </button>
+      <!--These are buyables.-->
     </div>
 
   </body> 
