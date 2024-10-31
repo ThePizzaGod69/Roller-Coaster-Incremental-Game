@@ -1,24 +1,18 @@
+.top-buttons{
+  display:flex;
+  justify-content:space-around;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 #topButtons{
     display: flex;
     justify-content: space-around;
   
   }
-  #le{
-    border-radius: 5px;
-  }
-  
-  #hi{
-    border-radius: 5px;
-  }
-  
-  #in{
-    border-radius: 5px;
-  }
-  
-  #th{
-    border-radius: 5px;
-  }
-  
   #hillReset{
     margin-left: 40px;
     margin-right: 50px;
