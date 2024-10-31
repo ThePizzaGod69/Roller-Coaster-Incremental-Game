@@ -1,3 +1,3 @@
-let score = Decimal(999999999999999);
+let score = new Decimal()
 let riderText = $('.riderText');
-riderText.text(score);
+riderText.text(score.toString());
