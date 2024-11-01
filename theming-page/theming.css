@@ -1,8 +1,9 @@
+body{background-color:#ffd19f;}
+
 header {
   display: flex;
   justify-content: space-between;
 }
-
 #topButtons{
   margin:auto;
   text-align:center;
