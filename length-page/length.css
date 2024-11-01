@@ -48,6 +48,8 @@ header {
     width: 70%;
     height: 50%;
     button{
+      background-color:#005326f1;
+      fill: white;
     border-radius:15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px}
