@@ -1,4 +1,4 @@
-body{background-color:#ffd19f;}
+body{background-color:#ffd19f}
 
 header {
   display: flex;
@@ -34,6 +34,7 @@ header {
 }
 
   #themeReset{
+    background-color:#b29fff;
     margin:auto;
     text-align:center;
     width: 70%;
@@ -45,6 +46,7 @@ header {
   }
   
   .buyableBoxes{
+    background-color:#9fdeff;
     margin:auto;
     text-align:center;
     display: flex;

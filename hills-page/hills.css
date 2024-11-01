@@ -1,4 +1,4 @@
-body{background-color:#ffd19f;}
+body{background-color:#ffd19f}
 
 header {
   display: flex;
@@ -35,6 +35,7 @@ header {
 }
 
   #hillReset{
+    background-color:#b29fff;
     margin:auto;
     text-align:center;
     width: 70%;
@@ -46,6 +47,7 @@ header {
   }
   
   .upgradeBoxes{
+    background-color:#9fdeff;
     margin:auto;
     text-align:center;
     display: flex;
