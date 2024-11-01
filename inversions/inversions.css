@@ -35,19 +35,18 @@ header {
 }
 
   #inversionsReset{
-    background-color:#b29fff;
     margin:auto;
     text-align:center;
     width: 70%;
     height: 50%;
     button{
+    background-color:#b29fff;
     border-radius:15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px}
   }
   
   .buyableBoxes{
-    background-color:#9fdeff;
     margin:auto;
     text-align:center;
     display: flex;
@@ -56,6 +55,7 @@ header {
     width: 90%;
     height: 50%;
     button{
+      background-color:#9fdeff;
       border-radius:10px;
       width: 40%;
       text-align:center;
