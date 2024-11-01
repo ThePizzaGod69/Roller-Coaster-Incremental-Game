@@ -1,16 +1,54 @@
-
 header {
     display: flex;
     justify-content: space-between;
-}
-
-#topButtons{
+  }
+  
+  #topButtons{
+    margin:auto;
+    text-align:center;
     display: flex;
-    justify-content: space-around;
-    button{
-     padding: 50px;   
-    }
+    justify-content: space-evenly;
+    align-items:center;
+  
+    a{width: 20%;   
+      
+  
+      button{
+        border-radius:10px;
+        padding: 20px;
+      font-size: 155%;
+        font-family: 'Times New Roman', Times, serif;
+  
+  
+    }}
   
   }
-
   
+  #lengthBuyables{
+    margin:auto;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    width: 90%;
+    height: 50%;
+    button{
+      border-radius:10px;
+      width: 40%;
+      text-align:center;
+      min-height: 150px;
+      margin: 10px;
+      font-size: 155%;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  }
+  #hillsUnlock{
+    margin:auto;
+    text-align:center;
+    width: 70%;
+    height: 50%;
+    button{
+    border-radius:15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px}
+  }

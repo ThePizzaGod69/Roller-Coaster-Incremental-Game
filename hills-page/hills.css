@@ -5,60 +5,53 @@ header {
 }
 
 #topButtons{
-    display: flex;
-    justify-content: space-around;
-  
-  }
+  margin:auto;
+  text-align:center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items:center;
+
+  a{width: 20%;   
+    
+
+    button{
+      border-radius:10px;
+      padding: 20px;
+    font-size: 155%;
+      font-family: 'Times New Roman', Times, serif;
+
+
+  }}
+
+}
+
   #hillReset{
-    margin-left: 40px;
-    margin-right: 50px;
-    margin-bottom: 25px;
-    font-size: 13px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin:auto;
+    text-align:center;
+    width: 70%;
+    height: 50%;
+    button{
+    border-radius:15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px}
   }
   
   .upgradeBoxes{
-    margin-left: 40px;
-    margin-right: 50px;
-    margin-bottom: 25px;
-    font-size: 13px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  #up1{
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-   #up2{
-     padding-left: 40px;
-     padding-right: 40px;
-     padding-top: 20px;
-     padding-bottom: 20px;
-   }
-  #up3{
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  #up4{
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  #up5{
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+    margin:auto;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    width: 90%;
+    height: 50%;
+    button{
+      border-radius:10px;
+      width: 40%;
+      text-align:center;
+      min-height: 150px;
+      margin: 10px;
+      font-size: 155%;
+      font-family: 'Times New Roman', Times, serif;
+    }}
   
   
