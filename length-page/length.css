@@ -14,13 +14,20 @@ header {
       
   
       button{
+        background-color:#005326f1;
+        color: white;
         border-radius:10px;
         padding: 20px;
       font-size: 155%;
         font-family: 'Times New Roman', Times, serif;
   
   
-    }}
+    }
+    #lengthButton{
+      background-color:#1fb161e8;
+      color: black;
+    }
+  }
   
   }
   
@@ -48,8 +55,6 @@ header {
     width: 70%;
     height: 50%;
     button{
-      background-color:#005326f1;
-      fill: white;
     border-radius:15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px}
