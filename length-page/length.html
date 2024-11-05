@@ -1,51 +1,46 @@
 <!DOCTYPE html>
-<html> 
-  <head> 
-    <meta charset='utf-8'> 
-    <meta name='viewport' content='width=device-width'> 
-    <title>Roller Coaster Incremental</title> 
-    <link href='length.css' rel='stylesheet' type='text/css' /> 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Roller Coaster Incremental</title>
+    <link href="length.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../main.js"></script>
     <script src="length.js"></script>
-  </head> 
+  </head>
   <body>
     <header>
-        <div class="riderCount">
-        <h2 id="riderText">You have 0 riders</h2>
-        <!--This shows the total amount of riders you have on your coaster.-->
-        <h3 id="riderGainText">You are getting 0 riders per second</h2>
-        <!--This shows the amount of riders you gain per second.-->  
-        </div>
-        <h2 id="lengthText">Your coaster is 0 meters long</h2>
-        <!--This shows how long your coaster currently is.-->
-      </header>
-  <nav id="topButtons">
-    <a><button id="lengthButton">length</button></a>
-    <a href="../hills-page/hills.html"><button>hills</button></a>
-    <a href="../inversions-page/inversions.html"><button>inversions</button></a>
-    <a href="../theming-page/theming.html"><button>theming</button></a>
-    <a href="../options-page/options.html"><button>options</button></a>
-  </nav>
-  <!--These are the navigational buttons that takes you to each page.-->
+      <div class="riderCount">
+        <h2 id="riderText">You have 1 riders</h2>
+        <!-- This shows the total amount of riders you have on your coaster. -->
+        <h3 id="riderGainText">You are getting 0 riders per second</h3>
+        <!-- This shows the amount of riders you gain per second. -->
+      </div>
+      <h2 id="lengthText">Your coaster is 0 meters long</h2>
+      <!-- This shows how long your coaster currently is. -->
+    </header>
 
+    <nav id="topButtons">
+      <a><button id="lengthButton">length</button></a>
+      <a href="../hills-page/hills.html"><button>hills</button></a>
+      <a href="../inversions-page/inversions.html"><button>inversions</button></a>
+      <a href="../theming-page/theming.html"><button>theming</button></a>
+      <a href="../options-page/options.html"><button>options</button></a>
+    </nav>
+    <!-- These are the navigational buttons that take you to each page. -->
 
+    <div id="lengthBuyables">
+      <button id="length1" onClick="buyLengthBuyable1()">Press this to get 1 more meter of length<br>Requires: 1 rider</button>
+      <button id="length2" onClick="buyLengthBuyable2()">Press this to get 2 more meters of length<br>Requires: 4 riders</button>
+      <button id="length3" onClick="buyLengthBuyable3()">Press this to get 5 more meters of length<br>Requires: 10 riders</button>
+      <button id="length4" onClick="buyLengthBuyable4()">Press this to get 10 more meters of length<br>Requires: 20 riders</button>
+    </div>
+    <!-- These are buyables that you can purchase to help you in the game. -->
 
-</div>
-  <div id="lengthBuyables">
-    <button id="length1" onClick="buyLengthBuyable1()">Press this to get 1 more meter of length<br>
-    Requires: 1 riders</button>
-    <button id="length2">Press this to get 2 more meters of length<br>
-      Requires: 4 riders</button>
-    <button id="length3">Press this to get 5 more meters of length<br>
-      Requires: 10 riders</button>
-    <button id="length4">Press this to get 10 more meters of length<br>
-      Requires: 20 riders</button>
-  </div>
-  <!--These are buyables that you can buy to help you in the game.-->
-  <div  id="hillsUnlock">
-  <button>Press here to unlock hills<br>
-  Requires 100 meters of length</button>
-</div>
-  <!--This button appears once you unlock the next page, which is hills.-->
-  <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
+    <div id="hillsUnlock">
+      <button id="hillsButton" onClick="buyLengthUpgrade()">Press here to unlock hills<br>Requires 250 meters of length</button>
+    </div>
+
   </body>
-  </html> 
+</html>

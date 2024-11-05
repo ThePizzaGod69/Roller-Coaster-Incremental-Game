@@ -6,8 +6,7 @@
     <title>Roller Coaster Incremental</title> 
     <link href='options.css' rel='stylesheet' type='text/css' /> 
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
-    <script src="../main.js"></script>
-    <script src='options.js'></script> 
+    <script>loadGame()</script>
   </head>
     <header>
         <div class="riderCount">
@@ -27,5 +26,5 @@
 <a href="../options-page/options.html"><button id="optionsButton">options</button></a>
 </nav>
 <div id="optionButtons">
-    <button id="saveDelete" onClick=deleteGame()>Click this to delete your save</button>
+    <button id="saveDelete" onClick="deleteSave()">Click this to delete your save</button>
 </div>
