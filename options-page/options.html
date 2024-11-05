@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+  <head> 
+    <meta charset='utf-8'> 
+    <meta name='viewport' content='width=device-width'> 
+    <title>Roller Coaster Incremental</title> 
+    <link href='options.css' rel='stylesheet' type='text/css' /> 
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
+    <script src="../main.js"></script>
+    <script src='options.js'></script> 
+  </head>
+    <header>
+        <div class="riderCount">
+            <h2 id="riderText">You have 0 riders</h2>
+            <!--This shows the total amount of riders you have on your coaster.-->
+            <h3 id="riderGainText">You are getting 0 riders per second</h2>
+            <!--This shows the amount of riders you gain per second.-->  
+    </div>
+    <h2 id="lengthText">Your coaster is 0 meters long</h2>
+    <!--This shows how long your coaster currently is.-->
+  </header>
+<nav id="topButtons">
+<a href="../length-page/length.html"><button>length</button></a>
+<a href="../hills-page/hills.html"><button>hills</button></a>
+<a href="../inversions-page/inversions.html"><button>inversions</button></a>
+<a href="../theming-page/theming.html"><button>theming</button></a>
+<a href="../options-page/options.html"><button id="optionsButton">options</button></a>
+</nav>
+<div id="optionButtons">
+    <button id="saveDelete" onclick=deleteGame()>Click this to delete your save</button>
+</div>
