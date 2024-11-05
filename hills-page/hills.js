@@ -110,7 +110,8 @@ function buyHillUpgrade6(){
     hillUpgradeButton6.text(hillUpgrade6.text+"<br>"+"bought")
 }
 updateHills(){
-    gameData.hillsCost=simplify(gameData.baseCost*Math.Pow(1.2,gameData.hills),3)
+    gameData.hillsCost=simplify(gameData.baseCost*Math.pow(1.2,gameData.hills),3)
+    
 }
 window.setInterval(function () {
     incrementRiders();
