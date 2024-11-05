@@ -40,6 +40,7 @@ function hillsReset(){
         if(gameData.length>=gameData.hillCost){
             gameData.hills+=1
             gameData.length=0
+            gameData.riders=0
             //Check for upgrades, and keep buyables if so
             if(gameData.hillsUpgrade2==false){gameData.lengthBuyable1=0}
             if(gameData.hillsUpgrade3==false){gameData.lengthBuyable2=0}
@@ -111,7 +112,7 @@ function buyHillUpgrade6(){
 }
 updateHills(){
     gameData.hillsCost=simplify(gameData.baseCost*Math.pow(1.2,gameData.hills),3)
-    
+    hillResetButton.html()
 }
 window.setInterval(function () {
     incrementRiders();
