@@ -1,3 +1,4 @@
+
 let gameData = {
 riders:1,
 baseRiderGain:0,
@@ -11,10 +12,10 @@ lengthBuyable4:0,
 hills:0,
 hillGain:0,
 }
-let lengthButton1 = $("length1");
-let lengthButton2 = $("length2");
-let lengthButton3 = $("length3");
-let lengthButton4 = $("length4");
+let lengthButton1 = $("#length1");
+let lengthButton2 = $("#length2");
+let lengthButton3 = $("#length3");
+let lengthButton4 = $("#length4");
 lengthBuyable1={
     text1:"Press this to get 1 more meter of length"<br>"Requires: ",
     text2:"riders"<br>"Bought: ",
@@ -82,13 +83,16 @@ function simplify(number,magnitude){
 function incrementRiders(){
     gameData.riders=simplify(gameData.riders+gameData.riderGain,3);
 }
-function loadGame(){
 
+function loadGame(){
+let saveLoader = JSON.parse(localStorage.getItem("save"))
 }
 function saveGame() {
 localStorage.setItem("save",JSON.stringify(gameData));
 }
 window.setInterval(function(){
+    incrementRiders();
+    saveGame();
     updateLengthBuyables();
-
+    saveGame();
     }, 1000)
