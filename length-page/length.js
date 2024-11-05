@@ -41,6 +41,7 @@ let lengthBuyable4 = {
 };
 let lengthUpgrade = {
     text:"Press here to unlock hills<br>Requires 250 meters of length",
+    condition:false
 }
 // Simplify function to round numbers
 function simplify(number, magnitude) {
@@ -51,11 +52,16 @@ function simplify(number, magnitude) {
 function incrementRiders() {
     gameData.baseRiderGain = simplify(gameData.length / 10, 3);
     gameData.riderGain = simplify(Math.pow(gameData.baseRiderGain, gameData.riderExponent), 3);
-
     gameData.riderGain = simplify(gameData.riderGain, 3);
 
     // Increment riders by the calculated rider gain
     gameData.riders = simplify(gameData.riders + gameData.riderGain, 3);
+}
+
+// Function to update the UI with the latest rider and length data
+function updateRiders() {
+    $("#riderText").text("You have " + gameData.riders + " riders");
+    $("#riderGainText").text("You are getting " + gameData.riderGain + " riders per second");
 }
 
 // Function to update the length of the coaster
@@ -69,7 +75,6 @@ function updateLengthBuyables() {
     $("#length2").html(lengthBuyable2.text1 + lengthBuyable2.cost + lengthBuyable2.text2 + lengthBuyable2.count);
     $("#length3").html(lengthBuyable3.text1 + lengthBuyable3.cost + lengthBuyable3.text2 + lengthBuyable3.count);
     $("#length4").html(lengthBuyable4.text1 + lengthBuyable4.cost + lengthBuyable4.text2 + lengthBuyable4.count);
-    if(gameData.lengthUpgrade==true){$("#hillsButton").html(lengthUpgrade.text+"<br>"+"bought")}
 }
 
 // Function to handle buying a length buyable (1 meter)
@@ -127,16 +132,54 @@ function buyLengthBuyable4() {
         saveGame();
     }
 }
-function buyLengthUpgrade(){
-    if(gameData.length>=250){
-        if(gameData.lengthUpgrade==false){
-            gameData.lengthUpgrade=true;
 
-            saveGame();
-        }
-    }
+// Save the game data to localStorage
+function saveGame() {
+    localStorage.setItem("save", JSON.stringify(gameData));
 }
-loadGame();
+
+if (localStorage.getItem("save")!==null) {
+    // Load saved game data
+    gameData = JSON.parse(localStorage.getItem("save"));
+    // Update the buyables from the saved game data
+    lengthBuyable1.count = gameData.lengthBuyable1;
+    lengthBuyable2.count = gameData.lengthBuyable2;
+    lengthBuyable3.count = gameData.lengthBuyable3;
+    lengthBuyable4.count = gameData.lengthBuyable4;
+    updateLengthBuyables()
+    updateLength()
+    updateRiders()
+
+} else {
+    // Initialize the game data if no saved game exists
+    gameData = {
+        riders: 1,
+        baseRiderGain: 0,
+        riderMultiplier: 1,
+        riderExponent: 1,
+        riderGain: 0,
+        length: 0,
+        lengthBuyable1: 0,
+        lengthBuyable2: 0,
+        lengthBuyable3: 0,
+        lengthBuyable4: 0,
+        lengthUpgrade: false,
+        hills: 0,
+        hillGain: 0,
+        hillExponent: 1.4,
+        hillUpgrade1: false,
+        hillUpgrade2: false,
+        hillUpgrade3: false,
+        hillUpgrade4: false,
+        hillUpgrade5: false,
+        hillUpgrade6: false,
+        inversions:0,
+        inversionGain:0,
+        inversionExponent:1.6,
+        
+    };
+    updateLengthBuyables()
+}
 // Update the game state every second
 window.setInterval(function () {
     incrementRiders();
