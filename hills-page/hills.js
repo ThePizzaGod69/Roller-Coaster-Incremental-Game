@@ -100,12 +100,21 @@ function buyHillUpgrade5(){
     hillUpgradeButton5.text(hillUpgrade5.text+"<br>"+"bought")
 }
 function buyHillUpgrade6(){
-    if(gameData.hills>=3){
+    if(gameData.hills>=25){
         if(hillUpgrade6.condition==false){
-        gameData.hills-=3;
+        gameData.hills-=25;
         hillUpgrade6.condition=true;
         saveGame();
         }
     }
     hillUpgradeButton6.text(hillUpgrade6.text+"<br>"+"bought")
 }
+updateHills(){
+    gameData.hillsCost=gameData.
+}
+window.setInterval(function () {
+    incrementRiders();
+    updateRiders();
+    
+    saveGame();
+}, 1000);
