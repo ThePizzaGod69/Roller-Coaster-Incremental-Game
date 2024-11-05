@@ -6,7 +6,7 @@ function simplify(number, magnitude) {
 function incrementRiders() {
     gameData.baseRiderGain = simplify(gameData.length / 10,3);
     let baller=simplify(Math.pow(gameData.baseRiderGain,gameData.riderExponent),3);
-    gameData.riderGain = simplify(gameData.riderGain*riderMultiplier, 3);
+    gameData.riderGain = simplify(gameData.riderGain*gameData.riderMultiplier, 3);
     
     // make number go up
     gameData.riders = simplify(gameData.riderGain+gameData.riders,3);
