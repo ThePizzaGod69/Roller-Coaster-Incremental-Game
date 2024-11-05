@@ -73,4 +73,4 @@ function loadGame() {
         updateLengthBuyables();
         };
     }
-}
+

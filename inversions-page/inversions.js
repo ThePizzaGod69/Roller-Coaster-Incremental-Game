@@ -19,9 +19,7 @@ let inversionBuyable2 = {
 };
 
 let inversionBuyable3 = {
-    text1: "Vertical Loop<br>
-          Cost: 1 inversion<br>
-          makes hill gain ^1.05",
+    text1: "Vertical Loop<br>Cost: 1 inversion<br>makes hill gain ^1.05",
     text2: " inversions<br>Bought: ",
     count: 0,
     startCost: 1,
