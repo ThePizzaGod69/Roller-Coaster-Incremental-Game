@@ -1,18 +1,6 @@
 
-let gameData = {
-    riders:1,
-    baseRiderGain:0,
-    riderExponent:1,
-    riderGain:0,
-    length:0,
-    lengthBuyable1:0,
-    lengthBuyable2:0,
-    lengthBuyable3:0,
-    lengthBuyable4:0,
-    hills:0,
-    hillGain:0,
-    }
     let lengthButton1 = $("#length1");
+    lengthButton1.text("ofniajdsnvoiaj");
     let lengthButton2 = $("#length2");
     let lengthButton3 = $("#length3");
     let lengthButton4 = $("#length4");
