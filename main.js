@@ -3,20 +3,10 @@ function simplify(number, magnitude) {
     return Math.round(number * Math.pow(10, magnitude)) / Math.pow(10, magnitude);
 }
 
-function incrementRiders() {
-    gameData.baseRiderGain = simplify(gameData.length / 10,3);
-    let baller=simplify(Math.pow(gameData.baseRiderGain,gameData.riderExponent),3);
-    gameData.riderGain = simplify(gameData.riderGain*gameData.riderMultiplier, 3);
-    
-    // make number go up
-    gameData.riders = simplify(gameData.riderGain+gameData.riders,3);
-}
-
 function updateRiders() {
     $("#riderText").text("You have " + gameData.riders + " riders");
     $("#riderGainText").text("You are getting " + gameData.riderGain + " riders per second");
 }
-// Function to update the UI with the latest rider and length data
 
 function saveGame() {
     localStorage.setItem("save", JSON.stringify(gameData));
@@ -28,7 +18,7 @@ function deleteSave(){
             riderExponent: 1,
             riderMultiplier:1,
             riderGain: 0,
-            length: 0,
+            length: 251,
             lengthBuyable1: 0,
             lengthBuyable2: 0,
             lengthBuyable3: 0,
@@ -50,6 +40,16 @@ function deleteSave(){
             inversionExponent: 1.6
     };
     saveGame();
+}
+// Function to increment the number of riders based on coaster length
+function incrementRiders() {
+    gameData.baseRiderGain = simplify(gameData.length / 10, 3);
+    gameData.riderGain = simplify(Math.pow(gameData.baseRiderGain, gameData.riderExponent), 3);
+
+    gameData.riderGain = simplify(gameData.riderGain*gameData.riderMultiplier, 3);
+
+    // Increment riders by the calculated rider gain
+    gameData.riders = simplify(gameData.riders + gameData.riderGain, 3);
 }
 
 function loadGame() {
@@ -73,4 +73,19 @@ function loadGame() {
         updateLengthBuyables();
         };
     }
+    function updateLengthBuyables() {
+        $("#length1").html(lengthBuyable1.text1 + lengthBuyable1.cost + lengthBuyable1.text2 + lengthBuyable1.count);
+        $("#length2").html(lengthBuyable2.text1 + lengthBuyable2.cost + lengthBuyable2.text2 + lengthBuyable2.count);
+        $("#length3").html(lengthBuyable3.text1 + lengthBuyable3.cost + lengthBuyable3.text2 + lengthBuyable3.count);
+        $("#length4").html(lengthBuyable4.text1 + lengthBuyable4.cost + lengthBuyable4.text2 + lengthBuyable4.count);
+        if(gameData.lengthUpgrade==true){$("#hillsButton").html(lengthUpgrade.text+"<br>"+"bought")}
+    }
+    function updateLength() {
+        $("#lengthText").text("Your coaster is " + gameData.length + " meters long");
+    }
 
+    window.setInterval(function () {
+        incrementRiders();
+        saveGame();
+        updateRiders();
+    }, 1000);

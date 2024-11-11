@@ -1,14 +1,16 @@
+let gameData = {};
 let hillUpgradeButton1 = $("#hill1");
 let hillUpgradeButton2 = $("#hill2");
 let hillUpgradeButton3 = $("#hill3");
 let hillUpgradeButton4 = $("#hill4");
 let hillUpgradeButton5 = $("#hill5");
 let hillUpgradeButton6 = $("#hill6");
-
+hillUpgradeButton1.text("jk");
+loadGame();
 let hillUpgrade1 = {
     text:"Multiply riders by 5<br>Cost: 3 hills",
     condition:false,
-    cost:3,
+    cost:3
 }
 let hillUpgrade2 = {
     text:"Keep all the first length buyables on reset<br>Cost: 3 hills",
@@ -35,21 +37,7 @@ let hillUpgrade6 = {
     condition:false,
     cost:25
 }
-function hillsReset(){
-    if(gameData.lengthUpgrade==true){
-        if(gameData.length>=gameData.hillCost){
-            gameData.hills+=1
-            gameData.length=0
-            gameData.riders=0
-            //Check for upgrades, and keep buyables if so
-            if(gameData.hillsUpgrade2==false){gameData.lengthBuyable1=0}
-            if(gameData.hillsUpgrade3==false){gameData.lengthBuyable2=0}
-            if(gameData.hillsUpgrade4==false){gameData.lengthBuyable3=0}
-            if(gameData.hillsUpgrade5==false){gameData.lengthBuyable4=0}
-            saveGame();
-        }
-    }
-}
+
 function buyHillUpgrade1(){
     if(gameData.hills>=3){
         if(hillUpgrade1.condition==false){
@@ -110,13 +98,28 @@ function buyHillUpgrade6(){
     }
     hillUpgradeButton6.text(hillUpgrade6.text+"<br>"+"bought")
 }
-updateHills(){
+function hillsReset(){
+    if(gameData.lengthUpgrade==true){
+        if(gameData.length>=gameData.hillCost){
+            gameData.hills+=1
+            gameData.length=0
+            gameData.riders=0
+            //Check for upgrades, and keep buyables if so
+            if(gameData.hillsUpgrade1==true){gameData.riderMultiplier=5}
+            if(gameData.hillsUpgrade2==false){gameData.lengthBuyable1=0}
+            if(gameData.hillsUpgrade3==false){gameData.lengthBuyable2=0}
+            if(gameData.hillsUpgrade4==false){gameData.lengthBuyable3=0}
+            if(gameData.hillsUpgrade5==false){gameData.lengthBuyable4=0}
+            saveGame();
+            updateHills();
+            saveGame();
+        }
+    }
+}
+function updateHills(){
     gameData.hillsCost=simplify(gameData.baseCost*Math.pow(1.2,gameData.hills),3)
-    hillResetButton.html()
+    $("#hillResetButton").html("Reset your riders and length buyables for "+gameData.hillsGain+" Hill<br>Next at "+gameData.hillsCost+" meters of length")
 }
 window.setInterval(function () {
-    incrementRiders();
-    updateRiders();
-    
-    saveGame();
+    hillsReset();
 }, 1000);

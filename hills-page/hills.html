@@ -5,8 +5,9 @@
     <meta name='viewport' content='width=device-width'> 
     <title>Roller Coaster Incremental</title> 
     <link href='hills.css' rel='stylesheet' type='text/css' /> 
-    <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
-    <script src='hills.js'>loadGame()</script> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../main.js">loadGame()</script>
+    <script src="hills.js"></script> 
   </head> 
   <body> 
     
@@ -20,12 +21,10 @@
     <nav id="topButtons">
       <a href="../length-page/length.html"><button>length</button></a>
       <a><button id="hillsButton">hills</button></a>
-      <a href="../inversions-page/inversions.html"><button>inversions</button></a>
-      <a href="../theming-page/theming.html"><button>theming</button></a>
-      <a href="../options-page/options.html"><button>options</button></a>
+      
     </nav>
     <div id="hillReset">
-    <button id="hillResetButton">Reset your riders and length buyables for 1 Hill<br> next at 250</button></div>
+    <button id="hillResetButton" onClick="hillsReset()">Reset your riders and length buyables for 1 Hill<br> next at 250</button></div>
     <!--This allows you to reset yur riders and length buyables for a Hill which is the resource in this page.-->
     <div class="upgradeBoxes">
       <button id="hill1">Multiply riders by 5<br>
