@@ -1,15 +1,15 @@
 
 function simplify(number, magnitude) {
-    return Math.round(number * Math.pow(10, magnitude)) / Math.pow(10, magnitude);
+    return number,times(new Decimal(10).pow(magnitude)).div(new Decimal(10).pow(magnitude));
 }
 
 function incrementRiders() {
-    gameData.baseRiderGain = simplify(gameData.length / 10,3);
-    let baller=simplify(Math.pow(gameData.baseRiderGain,gameData.riderExponent),3);
-    gameData.riderGain = simplify(gameData.riderGain*gameData.riderMultiplier, 3);
+    gameData.baseRiderGain = simplify(gameData.length.div(new Decimal(10)),3);
+    let baller=simplify(gameData.baseRiderGain.pow(riderExponent),3);
+    gameData.riderGain = simplify(gameData.riderGain.times(gameData.riderMultiplier), 3);
     
     // make number go up
-    gameData.riders = simplify(gameData.riderGain+gameData.riders,3);
+    gameData.riders = simplify(gameData.riderGain.plus(gameData.riders),3);
 }
 
 function updateRiders() {
@@ -23,31 +23,31 @@ function saveGame() {
 }
 function deleteSave(){
         gameData = {
-            riders: 1,
-            baseRiderGain: 0,
-            riderExponent: 1,
-            riderMultiplier:1,
-            riderGain: 0,
-            length: 0,
-            lengthBuyable1: 0,
-            lengthBuyable2: 0,
-            lengthBuyable3: 0,
-            lengthBuyable4: 0,
+            riders: new Decimal(1),
+            baseRiderGain: new Decimal(0),
+            riderExponent: new Decimal(1),
+            riderMultiplier:new Decimal(1),
+            riderGain: new Decimal(0),
+            length: new Decimal(0),
+            lengthBuyable1: new Decimal(0),
+            lengthBuyable2: new Decimal(0),
+            lengthBuyable3: new Decimal(0),
+            lengthBuyable4: new Decimal(0),
             lengthUpgrade: false,
-            hills: 0,
-            hillBaseCost:250,
-            hillCost:250,
-            hillGain: 0,
-            hillExponent: 1.2,
+            hills: new Decimal(0),
+            hillBaseCost:new Decimal(250),
+            hillCost:new Decimal(250),
+            hillGain: new Decimal(0),
+            hillExponent: new Decimal(1.2),
             hillUpgrade1: false,
             hillUpgrade2: false,
             hillUpgrade3: false,
             hillUpgrade4: false,
             hillUpgrade5: false,
             hillUpgrade6: false,
-            inversions: 0,
-            inversionGain: 0,
-            inversionExponent: 1.6
+            inversions: new Decimal(0),
+            inversionGain: new Decimal (0),
+            inversionExponent: new Decimal(1.6)
     };
     saveGame();
 }
@@ -72,5 +72,5 @@ function loadGame() {
         deleteSave();
         updateLengthBuyables();
         };
-    }
 }
+
