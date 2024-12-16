@@ -3,10 +3,10 @@ let gameData=[];
 let lengthBuyable1 = {
     text1: "Press this to get 1 more meter of length<br>Requires: ",
     text2: " riders<br>Bought: ",
-    count: 0,
-    startCost: 1,
-    cost: 1,
-    exponent: 1.1,
+    count: new Decimal(0),
+    startCost: new Decimal(1),
+    cost: new Decimal(1),
+    exponent: new Decimal(1.1),
     button: $("#length1")
 };
 
