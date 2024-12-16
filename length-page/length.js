@@ -70,7 +70,7 @@ function updateLengthBuyables() {
 
 // Function to handle buying a length buyable (1 meter)
 function buyLengthBuyable1() {
-    if (gameData.riders >= lengthBuyable1.cost) {
+    if (gameData.riders.gt(lengthBuyable1.cost)    ) {
         gameData.riders = gameData.riders.sub(lengthBuyable1.cost); // Take away riders
         lengthBuyable1.count = lengthBuyable1.count.plus(new Decimal(1)); // Increment count
         gameData.length = gameData.length.plus(new Decimal(1)); // Increase length by 1 meter
