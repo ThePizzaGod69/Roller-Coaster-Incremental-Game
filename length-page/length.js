@@ -140,4 +140,5 @@ window.setInterval(function () {
     saveGame();
     updateLength();
     updateRiders();
+    $("#lengthText").text("hxgfhcfgghxfdgvbfxd");
 }, 1000);
