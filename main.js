@@ -4,17 +4,17 @@ function simplify(number, magnitude) {
 }
 
 function incrementRiders() {
-    gameData.baseRiderGain = simplify(gameData.length.div(new Decimal(10)),3);
-    let baller=simplify(gameData.baseRiderGain.pow(riderExponent),3);
-    gameData.riderGain = simplify(gameData.riderGain.times(gameData.riderMultiplier), 3);
+    gameData.baseRiderGain = simplify(gameData.length.div(new Decimal(10)),new Decimal(3));
+    let baller=simplify(gameData.baseRiderGain.pow(riderExponent),new Decimal(3));
+    gameData.riderGain = simplify(gameData.riderGain.times(gameData.riderMultiplier), new Decimal(3));
     
     // make number go up
-    gameData.riders = simplify(gameData.riderGain.plus(gameData.riders),3);
+    gameData.riders = simplify(gameData.riderGain.plus(gameData.riders),new Decimal(3));
 }
 
 function updateRiders() {
-    $("#riderText").text("You have " + gameData.riders + " riders");
-    $("#riderGainText").text("You are getting " + gameData.riderGain + " riders per second");
+    $("#riderText").html("You have " + gameData.riders + " riders");
+    $("#riderGainText").html("You are getting " + gameData.riderGain + " riders per second");
 }
 // Function to update the UI with the latest rider and length data
 
@@ -64,13 +64,14 @@ function loadGame() {
         lengthBuyable4.count=gameData.lengthBuyable4
         
         // Update the UI with the saved data
-        updateLengthBuyables();
-        updateLength();
+
         updateRiders();
     } else {
         // Initialize the game data if no saved game exists
         deleteSave();
-        updateLengthBuyables();
+
         };
 }
+window.setInterval(function () {
 
+}, 1000);
