@@ -1,4 +1,4 @@
-
+let gameData={};
 function simplify(number, magnitude) {
     return number,times(new Decimal(10).pow(magnitude)).div(new Decimal(10).pow(magnitude));
 }

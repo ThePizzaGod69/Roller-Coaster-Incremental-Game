@@ -1,4 +1,3 @@
-let gameData={};
 // Define the length buyables
 let lengthBuyable1 = {
     text1: "Press this to get 1 more meter of length<br>Requires: ",
