@@ -4,12 +4,12 @@ function simplify(number, magnitude) {
 }
 
 function incrementRiders() {
-    gameData.baseRiderGain = simplify(gameData.length.div(new Decimal(10)),new Decimal(3));
-    let baller=simplify(gameData.baseRiderGain.pow(riderExponent),new Decimal(3));
-    gameData.riderGain = simplify(gameData.riderGain.times(gameData.riderMultiplier), new Decimal(3));
+    gameData.baseRiderGain = gameData.length.div(new Decimal(10));
+    let baller=gameData.baseRiderGain.pow(riderExponent);
+    gameData.riderGain = gameData.riderGain.times(gameData.riderMultiplier);
     
     // make number go up
-    gameData.riders = simplify(gameData.riderGain.plus(gameData.riders),new Decimal(3));
+    gameData.riders = gameData.riderGain.plus(gameData.riders);
 }
 
 function updateRiders() {
