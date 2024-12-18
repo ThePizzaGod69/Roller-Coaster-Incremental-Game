@@ -1,12 +1,11 @@
-let gameData={};
+let gameData = {};
 function simplify(number, magnitude) {
-    return number,times(new Decimal(10).pow(magnitude)).div(new Decimal(10).pow(magnitude));
+    return number.mul(new Decimal(10).pow(magnitude)).div(new Decimal(10).pow(magnitude));
 }
 
 function incrementRiders() {
     gameData.baseRiderGain = gameData.length.div(new Decimal(10));
-    let baller=gameData.baseRiderGain.pow(riderExponent);
-    gameData.riderGain = gameData.riderGain.times(gameData.riderMultiplier);
+    gameData.riderGain = gameData.riderGain.mul(gameData.riderMultiplier);
     
     // make number go up
     gameData.riders = gameData.riderGain.plus(gameData.riders);
@@ -36,7 +35,7 @@ function deleteSave(){
             lengthUpgrade: false,
             hills: new Decimal(0),
             hillBaseCost:new Decimal(250),
-            hillCost:new Decimal(250),
+            hillCost: new Decimal(250),
             hillGain: new Decimal(0),
             hillExponent: new Decimal(1.2),
             hillUpgrade1: false,
@@ -72,6 +71,3 @@ function loadGame() {
 
         };
 }
-window.setInterval(function () {
-
-}, 1000);
