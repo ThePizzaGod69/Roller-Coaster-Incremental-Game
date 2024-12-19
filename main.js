@@ -46,7 +46,7 @@ function deleteSave(){
             hillUpgrade6: false,
             inversions: new Decimal(0),
             inversionGain: new Decimal (0),
-            inversionExponent: new Decimal(1.6)
+            inversionExponent: new Decimal(16)
     };
     saveGame();
 }
