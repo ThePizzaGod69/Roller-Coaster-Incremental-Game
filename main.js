@@ -22,7 +22,7 @@ function saveGame() {
 }
 function deleteSave(){
         gameData = {
-            riders: new Decimal(167),
+            riders: new Decimal(0),
             baseRiderGain: new Decimal(0),
             riderExponent: new Decimal(1),
             riderMultiplier:new Decimal(1),
