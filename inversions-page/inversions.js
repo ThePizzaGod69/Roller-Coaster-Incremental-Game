@@ -57,4 +57,4 @@ let inversionBuyable6 = {
 };
 let inversionUpgrade = {
     text:"Press here to unlock themes<br>Requires 100 inversions",
-}
+};
