@@ -19,8 +19,7 @@ let inversionBuyable2 = {
 };
 
 let inversionBuyable3 = {
-    text1: "Vertical Loop<br>
-          Cost: 1 inversion<br>
+    text1: "Vertical Loop<br>           Cost: 1 inversion<br>
           makes hill gain ^1.05",
     text2: " inversions<br>Bought: ",
     count: 0,
@@ -60,12 +59,3 @@ let inversionBuyable6 = {
 let inversionUpgrade = {
     text:"Press here to unlock themes<br>Requires 100 inversions",
 }
-Corkscrew<br>
-Cost: 1 inversion<br>
-gives*5 rider gain</button>
-    <!--Lets you boost hill gain-->
-        <button id="inversion2">Vertical Loop<br>
-          Cost: 1 inversion<br>
-          makes hill gain ^1.05
-          <!--Lets you make a vertical loop a hill gain.-->
-
