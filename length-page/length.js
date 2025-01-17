@@ -51,7 +51,6 @@ function updateLength() {
 
 // Function to update the length buyable buttons with their current cost and count
 function updateLengthBuyables() {
-    buyLengthBuyable1();
     $("#length1").html(lengthBuyable1.text1 + lengthBuyable1.cost.toString() + lengthBuyable1.text2 + lengthBuyable1.count.toString());
     $("#length2").html(lengthBuyable2.text1 + lengthBuyable2.cost.toString() + lengthBuyable2.text2 + lengthBuyable2.count.toString());
     $("#length3").html(lengthBuyable3.text1 + lengthBuyable3.cost.toString() + lengthBuyable3.text2 + lengthBuyable3.count.toString());

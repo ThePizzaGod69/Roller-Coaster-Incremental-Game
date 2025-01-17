@@ -12,7 +12,7 @@ function incrementRiders() {
 }
 
 function updateRiders() {
-    $("#riderText").html("You have " + new Decimal(167).toString() + " riders");
+    $("#riderText").html("You have " + gameData.riders.toString() + " riders");
     $("#riderGainText").html("You are getting " + gameData.riderGain.toString() + " riders per second");
 }
 // Function to update the UI with the latest rider and length data
