@@ -1,18 +1,15 @@
 let gameData = {};
-function simplify(number, magnitude) {
-    return number.mul(new Decimal(10).pow(magnitude)).div(new Decimal(10).pow(magnitude));
-}
 
 function incrementRiders() {
-    gameData.baseRiderGain = gameData.length.div(new Decimal(10));
-    gameData.riderGain = gameData.riderGain.mul(gameData.riderMultiplier);
+    gameData.baseRiderGain = gameData.length.add(new Decimal(1));
+    gameData.riderGain = gameData.baseRiderGain.mul(gameData.riderMultiplier);
     
     // make number go up
-    gameData.riders = gameData.riderGain.add(gameData.riders);
+    gameData.riders = gameData.riders.add(gameData.riderGain);
 }
 
 function updateRiders() {
-    $("#riderText").html("You have " + new Decimal(167).toString() + " riders");
+    $("#riderText").html("You have " + gameData.riders.toString() + " riders");
     $("#riderGainText").html("You are getting " + gameData.riderGain.toString() + " riders per second");
 }
 // Function to update the UI with the latest rider and length data
@@ -22,12 +19,12 @@ function saveGame() {
 }
 function deleteSave(){
         gameData = {
-            riders: new Decimal(0),
+            riders: new Decimal(1),
             baseRiderGain: new Decimal(0),
             riderExponent: new Decimal(1),
             riderMultiplier:new Decimal(1),
             riderGain: new Decimal(0),
-            length: new Decimal(0),
+            length: new Decimal(1),
             lengthBuyable1: new Decimal(0),
             lengthBuyable2: new Decimal(0),
             lengthBuyable3: new Decimal(0),

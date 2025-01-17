@@ -51,7 +51,6 @@ function updateLength() {
 
 // Function to update the length buyable buttons with their current cost and count
 function updateLengthBuyables() {
-    buyLengthBuyable1();
     $("#length1").html(lengthBuyable1.text1 + lengthBuyable1.cost.toString() + lengthBuyable1.text2 + lengthBuyable1.count.toString());
     $("#length2").html(lengthBuyable2.text1 + lengthBuyable2.cost.toString() + lengthBuyable2.text2 + lengthBuyable2.count.toString());
     $("#length3").html(lengthBuyable3.text1 + lengthBuyable3.cost.toString() + lengthBuyable3.text2 + lengthBuyable3.count.toString());
@@ -61,7 +60,7 @@ function updateLengthBuyables() {
 
 // Function to handle buying a length buyable (1 meter)
 function buyLengthBuyable1() {
-    if (gameData.riders.gt(lengthBuyable1.cost)==true) {
+    if (gameData.riders.gte(lengthBuyable1.cost)==true) {
         gameData.riders = gameData.riders.sub(lengthBuyable1.cost); // Take away riders
         lengthBuyable1.count = lengthBuyable1.count.add(new Decimal(1)); // Increment count
         gameData.length = gameData.length.add(new Decimal(1)); // Increase length by 1 meter
@@ -77,7 +76,7 @@ function buyLengthBuyable1() {
 
 // Function to handle buying a length buyable (2 meters)
 function buyLengthBuyable2() {
-    if (gameData.riders.gt(lengthBuyable2.cost)==true) {
+    if (gameData.riders.gte(lengthBuyable2.cost)==true) {
         gameData.riders = gameData.riders.sub(lengthBuyable2.cost); // Take away riders
         lengthBuyable2.count = lengthBuyable2.count.add(new Decimal(1)); // Increment count
         gameData.length = gameData.length.add(new Decimal(2)); // Increase length by 2 meters
@@ -91,7 +90,7 @@ function buyLengthBuyable2() {
 
 // Function to handle buying a length buyable (5 meters)
 function buyLengthBuyable3() {
-    if (gameData.riders.gt(lengthBuyable3.cost)==true) {
+    if (gameData.riders.gte(lengthBuyable3.cost)==true) {
         gameData.riders = gameData.riders.sub(lengthBuyable3.cost); // Take away riders
         lengthBuyable3.count = lengthBuyable3.count.add(new Decimal(1)); // Increment count
         gameData.length = gameData.length.add(new Decimal(5)); // Increase length by 5 meters
@@ -105,7 +104,7 @@ function buyLengthBuyable3() {
 
 // Function to handle buying a length buyable (10 meters)
 function buyLengthBuyable4() {
-
+    if (gameData.riders.gte(lengthBuyable4.cost)==true) {
         gameData.riders = gameData.riders.sub(lengthBuyable4.cost); // Take away riders
         lengthBuyable4.count = lengthBuyable4.count.add(new Decimal(1)); // Increment count
         gameData.length = gameData.length.add(new Decimal(10)); // Increase length by 10 meters
@@ -114,7 +113,7 @@ function buyLengthBuyable4() {
         gameData.lengthBuyable4=lengthBuyable4.count;
         updateLengthBuyables(); // Update the buyable UI
         saveGame();
-    
+    }
 }
 function buyLengthUpgrade(){
     if(gameData.length.gt(new Decimal(250))==true){
@@ -129,8 +128,8 @@ loadGame();
 // Update the game state every second
 window.setInterval(function () {
     saveGame();
+    incrementRiders();
     updateRiders();
     updateLengthBuyables();
     updateLength();
-    incrementRiders();
 }, 1000);
