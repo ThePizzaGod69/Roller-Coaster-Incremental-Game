@@ -1,4 +1,4 @@
-body{background-color:#ffd19f}
+body{ background-image: linear-gradient(to bottom right, rgb(102, 12, 219), rgb(72, 145, 194));}
 
 header {
     display: flex;
@@ -17,7 +17,7 @@ header {
       
   
       button{
-        background-image: linear-gradient(to bottom right, rgb(102, 12, 219), rgb(72, 145, 194));
+        background-color:#5d27818c;
         color: white;
         border-radius:10px;
         padding: 20px;
