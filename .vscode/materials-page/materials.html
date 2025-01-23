@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Roller Coaster Incremental</title>
+    <link href="materials.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <script src="../main.js">loadGame()</script>
+    <script src="materials.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="riderCount">
+        <h2 id="riderText">You have 1 riders</h2>
+        <!-- This shows the total amount of riders you have on your coaster. -->
+        <h3 id="riderGainText">You are getting 0 riders per second</h3>
+        <!-- This shows the amount of riders you gain per second. -->
+      </div>
+      <h2 id="materialText">You have 0 material points</h2>
+      <!-- This shows how many material points you have. -->
+    </header>
+
+    <nav id="topButtons">
+      <a><button id="materialButton">materials</button></a>
+      <a href="../length-page/options.html"><button>length</button></a>
+      <a href="../hills-page/hills.html"><button>hills</button></a>
+      <a href="../inversions-page/inversions.html"><button>inversions</button></a>
+      <a href="../theming-page/theming.html"><button>theming</button></a>
+      <a href="../options-page/options.html"><button>options</button></a>
+    </nav>
+    <!-- These are the navigational buttons that take you to each page. -->
+
+    <div id="materialBuyables">
+      <button id="material1" onClick="buyLengthBuyable1()">Press this to get 1 more material point<br>Requires: 1 rider<br>Bought: 0</button>
+      <button id="material2" onClick="buyLengthBuyable2()">Press this to get 2 more material points<br>Requires: 4 riders<br>Bought: 0</button>
+      <button id="material3" onClick="buyLengthBuyable3()">Press this to get 5 more material points<br>Requires: 10 riders<br>Bought: 0</button>
+      <button id="material4" onClick="buyLengthBuyable4()">Press this to get 10 material points<br>Requires: 20 riders<br>Bought: 0</button>
+    </div>
+    <!-- These are buyables that you can purchase to help you in the game. -->
+
+    <div id="planetsUnlock">
+      <button id="planetsButton" onClick="buyLengthUpgrade()">Press here to unlock the planets layer<br>Requires 250 material points</button>
+    </div>
+
+  </body>
+</html>
