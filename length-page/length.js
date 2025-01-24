@@ -126,10 +126,7 @@ function buyLengthUpgrade(){
 }
 loadGame();
 // Update the game state every second
-window.setInterval(function () {
 
-    incrementRiders();
     updateRiders();
-    updateLengthBuyables();
+
     updateLength();
-}, 1000);
