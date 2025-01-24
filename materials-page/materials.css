@@ -17,13 +17,12 @@ header {
       
   
       button{
-        background-color:#5d27818c;
+        background-color:#005326f1;
         color: white;
         border-radius:10px;
         padding: 20px;
       font-size: 155%;
         font-family: 'Times New Roman', Times, serif;
-  
   
     }
     #materialsButton{
@@ -34,7 +33,7 @@ header {
   
   }
   
-  #materialsBuyables{
+  #materialBuyables{
     margin:auto;
     text-align:center;
     display: flex;
