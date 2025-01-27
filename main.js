@@ -1,66 +1,65 @@
-
-let gameData = {};
-
+let riderArray = [];
+let lengthArray = [];
+let hillsArray = [];
+let fullData = [];
 function incrementRiders() {
-    gameData.baseRiderGain = gameData.length.plus(new Decimal(1));
-    gameData.riderGain = gameData.baseRiderGain.times(gameData.riderMultiplier);
+    riderArray[1] = lengthArray[0].plus(new Decimal(1));
+    riderArray[4] = riderArray[1].times(riderArray[3]);
     
     // make number go up
-    gameData.riders = new Decimal(10)
+    riderArray[0] = new Decimal(10)
 }
 
 function updateRiders() {
-    let riderCount=gameData["riders"]
-    $("#riderText").html("You have " + riderCount.toString() + " riders");
-    $("#riderGainText").html("You are getting " + gameData.riderGain.toString() + " riders per second");
+    $("#riderText").html("You have " + riderArray[0].toString() + " riders");
+    $("#riderGainText").html("You are getting " + riderArray[4].toString() + " riders per second");
 }
 // Function to update the UI with the latest rider and length data
 
 function saveGame() {
-    localStorage.setItem("save", JSON.stringify(gameData));
+    fullData=[riderArray,lengthArray,hillsArray]
+    localStorage.setItem("everything", JSON.stringify(fullData));
 }
 function deleteSave(){
-        gameData = {
-            riders: new Decimal(10),
-            baseRiderGain: new Decimal(0),
-            riderExponent: new Decimal(1),
-            riderMultiplier:new Decimal(1),
-            riderGain: new Decimal(0),
-            length: new Decimal(1),
-            lengthBuyable1: new Decimal(0),
-            lengthBuyable2: new Decimal(0),
-            lengthBuyable3: new Decimal(0),
-            lengthBuyable4: new Decimal(0),
-            lengthUpgrade: false,
-            hills: new Decimal(0),
-            hillBaseCost:new Decimal(250),
-            hillCost: new Decimal(250),
-            hillGain: new Decimal(0),
-            hillExponent: new Decimal(1.2),
-            hillUpgrade1: false,
-            hillUpgrade2: false,
-            hillUpgrade3: false,
-            hillUpgrade4: false,
-            hillUpgrade5: false,
-            hillUpgrade6: false,
-            inversions: new Decimal(0),
-            inversionGain: new Decimal (0),
-            inversionExponent: new Decimal(16)
-    };
-    saveGame();
+        riderArray = [
+                new Decimal(10),//rider count(0)
+                new Decimal(0),//base rider gain(1)
+                new Decimal(1),//rider exponent(2)
+                new Decimal(1),//rider multiplier(3)
+                new Decimal(0)//rider gain(4)
+            ];
+        lengthArray=[
+                new Decimal(0),//length(0)
+                new Decimal(0),//buyable 1 count(1)
+                new Decimal(0),//buyable 2 count(2)
+                new Decimal(0),//buyable 1 count(3)
+                new Decimal(0),//buyable 1 count(4)
+                false//if you have the upgrade(5)
+            ];
+
+        hillsArray=[
+            new Decimal(0),//hills count(0)
+            new Decimal(250),//base cost of hills(1)
+            new Decimal(250),//current hill cost(2)
+            new Decimal(0),//hill gain(3)
+            new Decimal(1.2),//hill cost increase exponent(4)
+            false,//if you have hill upgrade 1(5)
+            false,//if you have hill upgrade 2(6)
+            false,//if you have hill upgrade 3(7)
+            false,//if you have hill upgrade 4(8)
+            false,//if you have hill upgrade 5(9)
+            false,//if you have hill upgrade 6(10)
+                ];
+        
 }
 
 function loadGame() {
-    savedData=localStorage.getItem("save")
-    if (savedData!==null) {
-        gameData = JSON.parse(localStorage.getItem("save"));
-
-        // Load the saved counts for each length buyable
-        lengthBuyable1.count=gameData.lengthBuyable1
-        lengthBuyable2.count=gameData.lengthBuyable2
-        lengthBuyable3.count=gameData.lengthBuyable3
-        lengthBuyable4.count=gameData.lengthBuyable4
-        
+    theTester=JSON.parse(localStorage.getItem("everything"));
+    if (typeof theTester!==undefined) {
+        fullData=theTester;
+        riderArray=fullData[0];
+        lengthArray=fullData[1];
+        hillsArray=fullData[2];
         // Update the UI with the saved data
 
         updateRiders();
