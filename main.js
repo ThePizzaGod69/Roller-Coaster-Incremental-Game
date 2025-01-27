@@ -1,15 +1,17 @@
+
 let gameData = {};
 
 function incrementRiders() {
-    gameData.baseRiderGain = gameData.length.add(new Decimal(1));
-    gameData.riderGain = gameData.baseRiderGain.mul(gameData.riderMultiplier);
+    gameData.baseRiderGain = gameData.length.plus(new Decimal(1));
+    gameData.riderGain = gameData.baseRiderGain.times(gameData.riderMultiplier);
     
     // make number go up
-    gameData.riders = gameData.riders.add(gameData.riderGain);
+    gameData.riders = new Decimal(10)
 }
 
 function updateRiders() {
-    $("#riderText").html("You have " + gameData.riders.toString() + " riders");
+    let riderCount=gameData["riders"]
+    $("#riderText").html("You have " + riderCount.toString() + " riders");
     $("#riderGainText").html("You are getting " + gameData.riderGain.toString() + " riders per second");
 }
 // Function to update the UI with the latest rider and length data
@@ -19,7 +21,7 @@ function saveGame() {
 }
 function deleteSave(){
         gameData = {
-            riders: new Decimal(1),
+            riders: new Decimal(10),
             baseRiderGain: new Decimal(0),
             riderExponent: new Decimal(1),
             riderMultiplier:new Decimal(1),
