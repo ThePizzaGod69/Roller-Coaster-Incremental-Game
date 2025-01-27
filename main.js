@@ -2,12 +2,13 @@ let riderArray = [];
 let lengthArray = [];
 let hillsArray = [];
 let fullData = [];
+
 function incrementRiders() {
-    riderArray[1] = lengthArray[0].plus(new Decimal(1));
+    riderArray[1] = new Decimal(0.1).times(lengthArray[0].plus(new Decimal(1)));
     riderArray[4] = riderArray[1].times(riderArray[3]);
     
     // make number go up
-    riderArray[0] = new Decimal(10)
+    riderArray[0] = riderArray[0].plus(riderArray[4])
 }
 
 function updateRiders() {
@@ -22,7 +23,7 @@ function saveGame() {
 }
 function deleteSave(){
         riderArray = [
-                new Decimal(10),//rider count(0)
+                new Decimal(0),//rider count(0)
                 new Decimal(0),//base rider gain(1)
                 new Decimal(1),//rider exponent(2)
                 new Decimal(1),//rider multiplier(3)
@@ -32,8 +33,8 @@ function deleteSave(){
                 new Decimal(0),//length(0)
                 new Decimal(0),//buyable 1 count(1)
                 new Decimal(0),//buyable 2 count(2)
-                new Decimal(0),//buyable 1 count(3)
-                new Decimal(0),//buyable 1 count(4)
+                new Decimal(0),//buyable 3 count(3)
+                new Decimal(0),//buyable 4 count(4)
                 false//if you have the upgrade(5)
             ];
 
