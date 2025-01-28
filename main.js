@@ -7,7 +7,7 @@ function incrementRiders() {
     riderArray[4] = riderArray[1].times(riderArray[3]);
     
     // make number go up
-    riderArray[0] = new Decimal(10)
+    riderArray[0]=riderArray[0].plus(new Decimal(1))
 }
 
 function updateRiders() {

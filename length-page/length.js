@@ -126,7 +126,7 @@ function buyLengthUpgrade(){
 }
 
 // Update the game state every second
-
+deleteSave();
 window.setInterval(function(){
     incrementRiders();
     updateRiders();
