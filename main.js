@@ -31,11 +31,42 @@ function deleteSave(){
             ];
         lengthArray=[
                 new Decimal(0),//length(0)
-                new Decimal(0),//buyable 1 count(1)
-                new Decimal(0),//buyable 2 count(2)
-                new Decimal(0),//buyable 3 count(3)
-                new Decimal(0),//buyable 4 count(4)
-                false//if you have the upgrade(5)
+                //buyable 1 stuff(1)
+                {text1: "Press this to get 1 more meter of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(1),
+                    cost: new Decimal(1),
+                    exponent: new Decimal(1.1),
+                    adder: new Decimal(1)},
+                    //buyable 2 stuff(2)
+                {text1: "Press this to get 2 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(4),
+                    cost: new Decimal(4),
+                    exponent: new Decimal(1.2),
+                    adder: new Decimal(2)},
+                    //buyable 3 stuff(3)
+                {text1: "Press this to get 5 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(10),
+                    cost: new Decimal(10),
+                    exponent: new Decimal(1.3),
+                    adder: new Decimal(5)},
+                    //buyable 4 stuff(4)
+                {text1: "Press this to get 10 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(20),
+                    cost: new Decimal(20),
+                    exponent: new Decimal(1.4),
+                    adder: new Decimal(10)},
+                    //upgrade stuff
+                {value:false,
+                    notBoughtText:"Press here to unlock hills<br>Requires 250 meters of length",
+                    boughtText:"You have unlocked hills"},
             ];
 
         hillsArray=[
