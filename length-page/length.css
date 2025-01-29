@@ -1,4 +1,4 @@
-body{background-color:#ffd19f}
+body{background-image: linear-gradient(to bottom right, rgb(102, 23, 230), rgb(101, 168, 245));}
 
 header {
     display: flex;
