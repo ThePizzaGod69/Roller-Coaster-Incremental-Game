@@ -1,4 +1,4 @@
-body{background-color:#ffd19f}
+body{background-image: linear-gradient(to bottom right, #5efd8b, #fffd4d)}
 
 header {
   display: flex;
@@ -65,4 +65,9 @@ header {
       font-family: 'Times New Roman', Times, serif;
     }
   }
-  
+  .riderCount{
+    color: whitesmoke;
+  }
+  #inversionText{
+    color: whitesmoke;
+  }
