@@ -2,13 +2,12 @@ let riderArray = [];
 let lengthArray = [];
 let hillsArray = [];
 let fullData = [];
-
 function incrementRiders() {
-    riderArray[1] = new Decimal(0.1).times(lengthArray[0].plus(new Decimal(1)));
+    riderArray[1] = lengthArray[0].plus(new Decimal(1));
     riderArray[4] = riderArray[1].times(riderArray[3]);
     
     // make number go up
-    riderArray[0] = riderArray[0].plus(riderArray[4])
+
 }
 
 function updateRiders() {
@@ -23,7 +22,7 @@ function saveGame() {
 }
 function deleteSave(){
         riderArray = [
-                new Decimal(0),//rider count(0)
+                new Decimal(10),//rider count(0)
                 new Decimal(0),//base rider gain(1)
                 new Decimal(1),//rider exponent(2)
                 new Decimal(1),//rider multiplier(3)
@@ -32,7 +31,7 @@ function deleteSave(){
         lengthArray=[
                 new Decimal(0),//length(0)
                 //buyable 1 stuff(1)
-                {text1: "Press this to get 1 more meter of length<br>Costs: ",
+                {text1: "Press this to get 1 more meter of length<br>Requires: ",
                     text2: " riders<br>Bought: ",
                     count: new Decimal(0),
                     startCost: new Decimal(1),
@@ -40,7 +39,7 @@ function deleteSave(){
                     exponent: new Decimal(1.1),
                     adder: new Decimal(1)},
                     //buyable 2 stuff(2)
-                {text1: "Press this to get 2 more meters of length<br>Costs: ",
+                {text1: "Press this to get 2 more meters of length<br>Requires: ",
                     text2: " riders<br>Bought: ",
                     count: new Decimal(0),
                     startCost: new Decimal(4),
@@ -48,7 +47,7 @@ function deleteSave(){
                     exponent: new Decimal(1.2),
                     adder: new Decimal(2)},
                     //buyable 3 stuff(3)
-                {text1: "Press this to get 5 more meters of length<br>Costs: ",
+                {text1: "Press this to get 5 more meters of length<br>Requires: ",
                     text2: " riders<br>Bought: ",
                     count: new Decimal(0),
                     startCost: new Decimal(10),
@@ -60,12 +59,12 @@ function deleteSave(){
                     text2: " riders<br>Bought: ",
                     count: new Decimal(0),
                     startCost: new Decimal(20),
-                    cost: new Decimal(25),
+                    cost: new Decimal(20),
                     exponent: new Decimal(1.4),
                     adder: new Decimal(10)},
                     //upgrade stuff
                 {value:false,
-                    notBoughtText:"Press here to unlock hills<br>Requires 2500 meters of length",
+                    notBoughtText:"Press here to unlock hills<br>Requires 250 meters of length",
                     boughtText:"You have unlocked hills"},
             ];
 
