@@ -1,4 +1,4 @@
-deleteSave();
+loadGame()
 // Function to update the length of the coaster
 function updateLength() {
     $("#lengthText").text("Your coaster is " + lengthArray[0].toString() + " meters long");
@@ -9,6 +9,8 @@ function updateLengthBuyables() {
     $("#length2").html(lengthArray[2].text1 + lengthArray[2].cost.toString() + lengthArray[2].text2 + lengthArray[2].count.toString());
     $("#length3").html(lengthArray[3].text1 + lengthArray[3].cost.toString() + lengthArray[3].text2 + lengthArray[3].count.toString());
     $("#length4").html(lengthArray[4].text1 + lengthArray[4].cost.toString() + lengthArray[4].text2 + lengthArray[4].count.toString());
+    $("#length5").html(lengthArray[5].text1 + lengthArray[5].cost.toString() + lengthArray[5].text2 + lengthArray[5].count.toString());
+    $("#length6").html(lengthArray[6].text1 + lengthArray[6].cost.toString() + lengthArray[6].text2 + lengthArray[6].count.toString());
     if(lengthArray[5].value==true){$("#hillsButton").html("Hills Unlocked")}
 }
 
@@ -28,8 +30,8 @@ function buyLengthBuyable(value) {
 }
 function buyLengthUpgrade(){
     if(lengthArray[0].gte(new Decimal(2500))==true){
-        if(lengthArray[5].value==false){
-            lengthArray[5].value=true;
+        if(lengthArray[7].value==false){
+            lengthArray[7].value=true;
 
             saveGame();
         }
@@ -43,5 +45,5 @@ function buyLengthUpgrade(){
     updateRiders();
     updateLength();
     updateLengthBuyables();
-}, 1000);
+}, 100);
 

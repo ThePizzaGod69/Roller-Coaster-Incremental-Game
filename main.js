@@ -7,7 +7,7 @@ function incrementRiders() {
     riderArray[4] = riderArray[1].times(riderArray[3]);
     
     // make number go up
-
+    riderArray[0] = riderArray[0].plus(riderArray[4].times(new Decimal(0.1)));
 }
 
 function updateRiders() {
@@ -17,7 +17,7 @@ function updateRiders() {
 // Function to update the UI with the latest rider and length data
 
 function saveGame() {
-    fullData=[riderArray,lengthArray,hillsArray]
+    fullData=[riderArray,lengthArray[0],lengthArray[1],lengthArray[2],lengthArray[3],lengthArray[4],lengthArray[5],lengthArray[6],lengthArray[7],hillsArray]
     localStorage.setItem("everything", JSON.stringify(fullData));
 }
 function deleteSave(){
@@ -62,10 +62,26 @@ function deleteSave(){
                     cost: new Decimal(20),
                     exponent: new Decimal(1.4),
                     adder: new Decimal(10)},
+                    //buyable 1 stuff(1)
+                {text1: "Press this to get 20 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(75),
+                    cost: new Decimal(75),
+                    exponent: new Decimal(1.6),
+                    adder: new Decimal(25)},
+                    //buyable 1 stuff(1)
+                {text1: "Press this to get 50 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(200),
+                    cost: new Decimal(200),
+                    exponent: new Decimal(1.75),
+                    adder: new Decimal(50)},
                     //upgrade stuff
                 {value:false,
                     notBoughtText:"Press here to unlock hills<br>Requires 250 meters of length",
-                    boughtText:"You have unlocked hills"},
+                    boughtText:"You have unlocked hills"}
             ];
 
         hillsArray=[
@@ -88,9 +104,9 @@ function loadGame() {
     theTester=JSON.parse(localStorage.getItem("everything"));
     if (typeof theTester!==undefined) {
         fullData=theTester;
-        riderArray=fullData[0];
-        lengthArray=fullData[1];
-        hillsArray=fullData[2];
+        riderArray=[fullData[0]];
+        lengthArray=[fullData[1],fullData[2],fullData[3],fullData[4],fullData[5],fullData[6],fullData[7],fullData[8]];
+        hillsArray=[fullData[9]];
         // Update the UI with the saved data
 
         updateRiders();
