@@ -1,4 +1,4 @@
-deleteSave()
+loadSave()
 // Function to update the length of the coaster
 function updateLength() {
     $("#lengthText").text("Your coaster is " + lengthArray[0].toString() + " meters long");
@@ -14,7 +14,6 @@ function updateLengthBuyables() {
 
 // Function to handle buying a length buyable (1 meter)
 function buyLengthBuyable(value) {
-    thisObject=lengthArray[value].valueOf();
     if (riderArray[0].gte(lengthArray[value].cost)==true) {
         riderArray[0] = riderArray[0].minus(lengthArray[value].cost); // Take away riders
         lengthArray[value].count = lengthArray[value].count.plus(new Decimal(1)); // Increment count
