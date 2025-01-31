@@ -1,4 +1,4 @@
-loadSave()
+deleteSave();
 // Function to update the length of the coaster
 function updateLength() {
     $("#lengthText").text("Your coaster is " + lengthArray[0].toString() + " meters long");
