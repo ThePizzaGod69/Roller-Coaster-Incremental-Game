@@ -1,4 +1,4 @@
-loadGame()
+loadGame();
 // Function to update the length of the coaster
 function updateLength() {
     $("#lengthText").text("Your coaster is " + lengthArray[0].toString() + " meters long");
@@ -40,10 +40,4 @@ function buyLengthUpgrade(){
 //for length page-specific saving
 
 // Update the game state every second
- window.setInterval(function(){
-    incrementRiders();
-    updateRiders();
-    updateLength();
-    updateLengthBuyables();
-}, 100);
 

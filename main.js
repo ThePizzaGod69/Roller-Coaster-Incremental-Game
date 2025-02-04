@@ -2,6 +2,7 @@ let riderArray = [];
 let lengthArray = [];
 let hillsArray = [];
 let fullData = [];
+let saveMe="";
 function incrementRiders() {
     riderArray[1] = lengthArray[0].plus(new Decimal(1));
     riderArray[4] = riderArray[1].times(riderArray[3]);
@@ -17,7 +18,7 @@ function updateRiders() {
 // Function to update the UI with the latest rider and length data
 
 function saveGame() {
-    fullData=[riderArray,lengthArray[0],lengthArray[1],lengthArray[2],lengthArray[3],lengthArray[4],lengthArray[5],lengthArray[6],lengthArray[7],hillsArray]
+    fullData=[riderArray,lengthArray,hillsArray]
     localStorage.setItem("everything", JSON.stringify(fullData));
 }
 function deleteSave(){
@@ -103,12 +104,13 @@ function deleteSave(){
 function loadGame() {
     theTester=JSON.parse(localStorage.getItem("everything"));
     if (typeof theTester!==undefined) {
-        fullData=theTester;
+        fullData=[...theTester];
+
         riderArray=[fullData[0]];
         lengthArray=[fullData[1],fullData[2],fullData[3],fullData[4],fullData[5],fullData[6],fullData[7],fullData[8]];
+        $("#lengthText").text(lengthArray);
         hillsArray=[fullData[9]];
         // Update the UI with the saved data
-
         updateRiders();
     } else {
         // Initialize the game data if no saved game exists
