@@ -2,7 +2,6 @@ let riderArray = [];
 let lengthArray = [];
 let hillsArray = [];
 let fullData = [];
-let saveMe="";
 function incrementRiders() {
     riderArray[1] = lengthArray[0].plus(new Decimal(1));
     riderArray[4] = riderArray[1].times(riderArray[3]);
@@ -18,7 +17,25 @@ function updateRiders() {
 // Function to update the UI with the latest rider and length data
 
 function saveGame() {
-    fullData=[riderArray,lengthArray,hillsArray]
+    fullData={riderArray: riderArray.map(value => value instanceof Decimal ? value.toString() : value),
+        lengthArray: lengthArray.map(value => {
+            if (value instanceof Decimal) {
+                return value.toString();
+            } else if (typeof value === "object" && value !== null) {
+                // Save nested properties inside the object
+                return {
+                    ...value,
+                    count: value.count instanceof Decimal ? value.count.toString() : value.count,
+                    startCost: value.startCost instanceof Decimal ? value.startCost.toString() : value.startCost,
+                    cost: value.cost instanceof Decimal ? value.cost.toString() : value.cost,
+                    exponent: value.exponent instanceof Decimal ? value.exponent.toString() : value.exponent,
+                    adder: value.adder instanceof Decimal ? value.adder.toString() : value.adder
+                };
+            }
+            return value;
+        }),
+        hillsArray: hillsArray.map(value => value instanceof Decimal ? value.toString() : value)
+    }
     localStorage.setItem("everything", JSON.stringify(fullData));
 }
 function deleteSave(){
@@ -32,57 +49,50 @@ function deleteSave(){
         lengthArray=[
                 new Decimal(0),//length(0)
                 //buyable 1 stuff(1)
-                {text1: "Press this to get 1 more meter of length<br>Requires: ",
-                    text2: " riders<br>Bought: ",
+                {
                     count: new Decimal(0),
                     startCost: new Decimal(1),
                     cost: new Decimal(1),
                     exponent: new Decimal(1.1),
                     adder: new Decimal(1)},
                     //buyable 2 stuff(2)
-                {text1: "Press this to get 2 more meters of length<br>Requires: ",
-                    text2: " riders<br>Bought: ",
+                {
                     count: new Decimal(0),
                     startCost: new Decimal(4),
                     cost: new Decimal(4),
                     exponent: new Decimal(1.2),
                     adder: new Decimal(2)},
                     //buyable 3 stuff(3)
-                {text1: "Press this to get 5 more meters of length<br>Requires: ",
-                    text2: " riders<br>Bought: ",
+                {
                     count: new Decimal(0),
                     startCost: new Decimal(10),
                     cost: new Decimal(10),
                     exponent: new Decimal(1.3),
                     adder: new Decimal(5)},
                     //buyable 4 stuff(4)
-                {text1: "Press this to get 10 more meters of length<br>Requires: ",
-                    text2: " riders<br>Bought: ",
+                {
                     count: new Decimal(0),
                     startCost: new Decimal(20),
                     cost: new Decimal(20),
                     exponent: new Decimal(1.4),
                     adder: new Decimal(10)},
                     //buyable 1 stuff(1)
-                {text1: "Press this to get 20 more meters of length<br>Requires: ",
-                    text2: " riders<br>Bought: ",
+                {
                     count: new Decimal(0),
                     startCost: new Decimal(75),
                     cost: new Decimal(75),
                     exponent: new Decimal(1.6),
                     adder: new Decimal(25)},
                     //buyable 1 stuff(1)
-                {text1: "Press this to get 50 more meters of length<br>Requires: ",
-                    text2: " riders<br>Bought: ",
+                {
                     count: new Decimal(0),
                     startCost: new Decimal(200),
                     cost: new Decimal(200),
                     exponent: new Decimal(1.75),
                     adder: new Decimal(50)},
                     //upgrade stuff
-                {value:false,
-                    notBoughtText:"Press here to unlock hills<br>Requires 250 meters of length",
-                    boughtText:"You have unlocked hills"}
+                false
+                
             ];
 
         hillsArray=[
@@ -104,12 +114,26 @@ function deleteSave(){
 function loadGame() {
     theTester=JSON.parse(localStorage.getItem("everything"));
     if (typeof theTester!==undefined) {
-        fullData=[...theTester];
+        fullData=theTester;
 
-        riderArray=[fullData[0]];
-        lengthArray=[fullData[1],fullData[2],fullData[3],fullData[4],fullData[5],fullData[6],fullData[7],fullData[8]];
-        $("#lengthText").text(lengthArray);
-        hillsArray=[fullData[9]];
+        riderArray=fullData.riderArray.map(value => new Decimal(value));
+        lengthArray=fullData.lengthArray.map(item => {
+            if(typeof item === "string"){
+                return new Decimal(item)
+            }
+            else if (typeof item === "object"){
+                return{
+                    ...item,
+                    count: new Decimal(item.count),
+                    startCost: new Decimal(item.startCost),
+                    cost: new Decimal(item.cost),
+                    exponent: new Decimal(item.exponent),
+                    adder: new Decimal(item.adder)
+                }
+                }
+            }
+        );
+        hillsArray=fullData.hillsArray.map(value => value instanceof string ? new Decimal(value) : value);
         // Update the UI with the saved data
         updateRiders();
     } else {
