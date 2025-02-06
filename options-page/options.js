@@ -1,3 +1,5 @@
+deleteSave();
 window.setInterval(function(){
-    updateRiders()
-}, 1000);
+    incrementRiders();
+    updateRiders();
+}, 100);

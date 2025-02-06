@@ -2,12 +2,13 @@ let riderArray = [];
 let lengthArray = [];
 let hillsArray = [];
 let fullData = [];
+let saveMe="";
 function incrementRiders() {
     riderArray[1] = lengthArray[0].plus(new Decimal(1));
     riderArray[4] = riderArray[1].times(riderArray[3]);
     
     // make number go up
-
+    riderArray[0] = riderArray[0].plus(riderArray[4].times(new Decimal(0.1)));
 }
 
 function updateRiders() {
@@ -30,11 +31,58 @@ function deleteSave(){
             ];
         lengthArray=[
                 new Decimal(0),//length(0)
-                new Decimal(0),//buyable 1 count(1)
-                new Decimal(0),//buyable 2 count(2)
-                new Decimal(0),//buyable 1 count(3)
-                new Decimal(0),//buyable 1 count(4)
-                false//if you have the upgrade(5)
+                //buyable 1 stuff(1)
+                {text1: "Press this to get 1 more meter of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(1),
+                    cost: new Decimal(1),
+                    exponent: new Decimal(1.1),
+                    adder: new Decimal(1)},
+                    //buyable 2 stuff(2)
+                {text1: "Press this to get 2 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(4),
+                    cost: new Decimal(4),
+                    exponent: new Decimal(1.2),
+                    adder: new Decimal(2)},
+                    //buyable 3 stuff(3)
+                {text1: "Press this to get 5 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(10),
+                    cost: new Decimal(10),
+                    exponent: new Decimal(1.3),
+                    adder: new Decimal(5)},
+                    //buyable 4 stuff(4)
+                {text1: "Press this to get 10 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(20),
+                    cost: new Decimal(20),
+                    exponent: new Decimal(1.4),
+                    adder: new Decimal(10)},
+                    //buyable 1 stuff(1)
+                {text1: "Press this to get 20 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(75),
+                    cost: new Decimal(75),
+                    exponent: new Decimal(1.6),
+                    adder: new Decimal(25)},
+                    //buyable 1 stuff(1)
+                {text1: "Press this to get 50 more meters of length<br>Requires: ",
+                    text2: " riders<br>Bought: ",
+                    count: new Decimal(0),
+                    startCost: new Decimal(200),
+                    cost: new Decimal(200),
+                    exponent: new Decimal(1.75),
+                    adder: new Decimal(50)},
+                    //upgrade stuff
+                {value:false,
+                    notBoughtText:"Press here to unlock hills<br>Requires 250 meters of length",
+                    boughtText:"You have unlocked hills"}
             ];
 
         hillsArray=[
@@ -56,12 +104,13 @@ function deleteSave(){
 function loadGame() {
     theTester=JSON.parse(localStorage.getItem("everything"));
     if (typeof theTester!==undefined) {
-        fullData=theTester;
-        riderArray=fullData[0];
-        lengthArray=fullData[1];
-        hillsArray=fullData[2];
-        // Update the UI with the saved data
+        fullData=[...theTester];
 
+        riderArray=[fullData[0]];
+        lengthArray=[fullData[1],fullData[2],fullData[3],fullData[4],fullData[5],fullData[6],fullData[7],fullData[8]];
+        $("#lengthText").text(lengthArray);
+        hillsArray=[fullData[9]];
+        // Update the UI with the saved data
         updateRiders();
     } else {
         // Initialize the game data if no saved game exists

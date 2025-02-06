@@ -52,7 +52,7 @@ header {
     }
 }
 
-#in/exButtons{ 
+#indexButtons{ 
   margin:auto;
   text-align:center;
   display: flex;
@@ -67,5 +67,5 @@ header {
     min-height: 150px;
     margin: 10px;
     font-size: 155%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;}
 }
