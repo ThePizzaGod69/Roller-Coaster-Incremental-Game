@@ -1,9 +1,12 @@
+/*background color for pages*/
 body{background-image: linear-gradient(to bottom right, #fffd4d, #ff8d4d)}
 
+/*Makes space between top buttons*/
 header {
   display: flex;
   justify-content: space-between;
 }
+/*These are the top buttons*/
 #topButtons{
   margin:auto;
   text-align:center;
@@ -14,7 +17,7 @@ header {
   margin-bottom: 20px;
   a{width: 20%;   
     
-
+/*Desgin for all button*/
     button{
       background-color:#005326f1;
       color: white;
@@ -44,7 +47,7 @@ header {
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px}
   }
-  
+  /*These are the buyables on this page*/
   .buyableBoxes{
     margin:auto;
     text-align:center;
