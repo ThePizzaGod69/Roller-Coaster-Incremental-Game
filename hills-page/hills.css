@@ -55,7 +55,7 @@ header {
     width: 90%;
     height: 50%;
     button{
-      background-color:#9fdeff;
+      background-image: linear-gradient(to bottom right, #cb1987, #a755bd);
       border-radius:10px;
       width: 40%;
       text-align:center;
