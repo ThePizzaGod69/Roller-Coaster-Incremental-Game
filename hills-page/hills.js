@@ -1,4 +1,9 @@
-
+function initializeHillUpgrades(){
+    if(hillsArray(5)===true){
+        $("#hill1").html(text2);
+    }
+}
+//handles the buying of hill upgrades
 function buyHillUpgrade(which, price, text1, text2, thing){
     if(hillsArray[which+4]===false){
         if(hillsArray[0].gte(new Decimal(price))){
@@ -10,7 +15,9 @@ function buyHillUpgrade(which, price, text1, text2, thing){
         }
         else{$("#"+thing).html(text1);}
     }
+    else{$("#"+thing).html(text2);}
 }
+//gives the actual reward for the upgrades
 function giveEffect(newUpgrade){
     if(newUpgrade===1){
         riderArray[3] = riderArray[3].times(new Decimal(5));
@@ -23,15 +30,17 @@ function giveEffect(newUpgrade){
     }
     saveGame();
 }
+//updates the hill total
 function updateHills(){
     hillsArray[2]=hillsArray[1].times(hillsArray[4].pow(hillsArray[0]));
     $("#hillResetButton").html("Reset Previous progress for a hill"+"\n"+"Next at: "+hillsArray[2].toString()+" Meters of Length");
 }
+//updates the button used to buy hills
 function hillsDisplay(){
     $("#hillText").text("Your Coaster has "+hillsArray[0].toString()+" Hills")
 }
+//handles the usage of the hills reset button
 function hillsReset(){
-    console.log(typeof lengthArray[1].count==Decimal)
     if (lengthArray[0].gte(hillsArray[2]) && lengthArray[7]===true){
         hillsArray[0]=hillsArray[0].plus(new Decimal(1));
         if(hillsArray[6]===false){
