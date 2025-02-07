@@ -2,6 +2,21 @@ function initializeHillUpgrades(){
     if(hillsArray(5)===true){
         $("#hill1").html(text2);
     }
+    if(hillsArray(6)===true){
+        $("#hill2").html(text2);
+    }
+    if(hillsArray(7)===true){
+        $("#hill3").html(text2);
+    }
+    if(hillsArray(8)===true){
+        $("#hill4").html(text2);
+    }
+    if(hillsArray(9)===true){
+        $("#hill5").html(text2);
+    }
+    if(hillsArray(10)===true){
+        $("#hill6").html(text2);
+    }
 }
 //handles the buying of hill upgrades
 function buyHillUpgrade(which, price, text1, text2, thing){
