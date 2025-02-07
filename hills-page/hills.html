@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html> 
   <head> 
-    <meta charset='utf-8'> 
-    <meta name='viewport' content='width=device-width'> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width"> 
     <title>Roller Coaster Incremental</title> 
-    <link href='hills.css' rel='stylesheet' type='text/css' /> 
-    <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
-    <script src='hills.js'>loadGame()</script> 
+    <link href="hills.css" rel="stylesheet" type="text/css" /> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script> 
+    <script src="https://cdn.jsdelivr.net/npm/break_eternity.js@2"></script>
   </head> 
   <body> 
     
@@ -18,40 +18,35 @@
     <h2 id="hillText">Your coaster has 0 hills</h2>
   </header>
     <nav id="topButtons">
-      <a href="../length-page/length.html"><button>length</button></a>
+      <a href="../length-page/length.html" onclick="saveGame()"><button>length</button></a>
       <a><button id="hillsButton">hills</button></a>
-      <a href="../inversions-page/inversions.html"><button>inversions</button></a>
-      <a href="../theming-page/theming.html"><button>theming</button></a>
-      <a href="../materials-page/materials.html"><button>materials</button></a>
-      <a href="../planets-page/planets.html"><button>planets</button></a>
-      <a href="../options-page/options.html"><button>options</button></a>
+      <a href="../inversions-page/inversions.html" onclick="saveGame()"><button>inversions</button></a>
+      <a href="../theming-page/theming.html" onclick="saveGame()"><button>theming</button></a>
+      <a href="../options-page/options.html" onclick="saveGame()"><button>options</button></a>
     </nav>
     <div id="hillReset">
-    <button id="hillResetButton">Reset your riders and length buyables for 1 Hill<br> next at 1986 riders</button></div>
+    <button id="hillResetButton" onclick="hillsReset()">Reset your riders and length buyables for 1 Hill<br> next at 1986 riders</button></div>
     <!--This allows you to reset yur riders and length buyables for a Hill which is the resource in this page.-->
     <div class="upgradeBoxes">
-      <button id="hill1">Multiply riders by 5<br>
+      <button id="hill1" onclick="buyHillUpgrade(1,3,'Multiply Rider Gain by 5<br>Cost: 3 hills','Riders have been multiplied by 5','hill1')">
         <!--This multiplies the total amount of riders by 5-->
-        Cost: 3 hills</button>
-        <button id="hill2">Keep all the first length buyables on reset<br>
+        Multiply Rider Gain by 5<br>Cost: 3 hills
+</button>
+        <button id="hill2" onclick="buyHillUpgrade(2,3,'Keep all the first length buyables on reset and *2 rider gain<br>Cost: 3 hills','Second length buyables kept','hill2')">Keep all the first length buyables on reset and *2 rider gain<br>Cost: 3 hills<br></button>
         <!--This keeps all first length buyables on reset.-->
-        Cost: 3 hills</button>
-      <button id="hill3">Keep all the second length buyables on reset<br>
-        Cost: 4 hills
+      <button id="hill3" onclick="buyHillUpgrade(3,4,'Keep all the second length buyables on reset and *2 rider gain<br>Cost: 4 hills','First length buyables kept','hill3')">Keep all the second length buyables on reset and *2 rider gain<br>Cost: 4 hills
       </button>
       <br>
-      <button id="hill4">Keep all the third length buyables on reset<br>
-        Cost: 6 hills
+      <button id="hill4" onclick="buyHillUpgrade(4,6,'Keep all the third and fourth length buyables on reset and *2 rider gain<br>Cost: 6 hills','Third and fourth length buyables kept','hill4')">Keep all the third and fourth length buyables on reset and *2 rider gain<br>Cost: 6 hills
       </button>
-      <button id="hill5">Keep all the fourth length buyables on reset<br>
-        Cost: 10 hills
+      <button id="hill5" onclick="buyHillUpgrade(5,10,'Keep all the fifth and sixth length buyables on reset and *2 rider gain<br>Cost: 10 hills','Fifth and sixth length buyables kept','hill5')">Keep all the fifth and sixth length buyables on reset and *2 rider gain<br>Cost: 10 hills
       </button>
       <br>
-      <button id="hill6">Unlock inversions<br> and never lose hill unlock<br>
-        Cost: 25 hills
+      <button id="hill6" onclick="buyHillUpgrade(6,20,'Unlock inversions<br> and never lose hill unlock<br>Cost: 20 hills','Inversions unlocked and hills permenently unlocked','hill6')">Unlock inversions<br> and never lose hill unlock<br>Cost: 20 hills
       </button>
       <!--These are upgrades you can buy.-->
     </div>
-    
+    <script src="../main.js"></script> 
+    <script src="hills.js"></script> 
   </body> 
   </html>

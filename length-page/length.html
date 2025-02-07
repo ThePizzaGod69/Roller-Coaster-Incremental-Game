@@ -6,7 +6,7 @@
     <title>Roller Coaster Incremental</title>
     <link href="length.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/break_eternity.js@2"></script>
 
   </head>
   <body>
@@ -23,26 +23,24 @@
 
     <nav id="topButtons">
       <a><button id="lengthButton">length</button></a>
-      <a href="../hills-page/hills.html"><button>hills</button></a>
-      <a href="../inversions-page/inversions.html"><button>inversions</button></a>
-      <a href="../theming-page/theming.html"><button>theming</button></a>
-      <a href="../materials-page/materials.html"><button>materials</button></a>
-      <a href="../planets-page/planets.html"><button>planets</button></a>
-      <a href="../options-page/options.html"><button>options</button></a>
+      <a href="../hills-page/hills.html" onclick="saveGame()"><button>hills</button></a>
+      <a href="../inversions-page/inversions.html"><button onclick="saveGame()">inversions</button></a>
+      <a href="../theming-page/theming.html"><button onclick="saveGame()">theming</button></a>
+      <a href="../options-page/options.html"><button onclick="saveGame()">options</button></a>
     </nav>
     <!-- These are the navigational buttons that take you to each page. -->
 
     <div id="lengthBuyables">
-      <button id="length1" onClick="buyLengthBuyable(1)">Press this to get 1 more meter of length<br>Costs: 1 rider<br>Bought: 0</button>
-      <button id="length2" onClick="buyLengthBuyable(2)">Press this to get 2 more meters of length<br>Costs: 4 riders<br>Bought: 0</button>
-      <button id="length3" onClick="buyLengthBuyable(3)">Press this to get 5 more meters of length<br>Costs: 10 riders<br>Bought: 0</button>
-      <button id="length4" onClick="buyLengthBuyable(4)">Press this to get 10 more meters of length<br>Costs: 25 riders<br>Bought: 0</button>
-      <button id="length5" onClick="buyLengthBuyable(5)">Press this to get 25 more meters of length<br>Costs: 75 riders<br>Bought: 0</button>
-      <button id="length6" onClick="buyLengthBuyable(6)">Press this to get 50 more meters of length<br>Costs: 200 riders<br>Bought: 0</button>
+      <button id="length1" onclick="buyLengthBuyable(1)">Press this to get 1 more meter of length<br>Costs: 1 rider<br>Bought: 0</button>
+      <button id="length2" onclick="buyLengthBuyable(2)">Press this to get 2 more meters of length<br>Costs: 4 riders<br>Bought: 0</button>
+      <button id="length3" onclick="buyLengthBuyable(3)">Press this to get 5 more meters of length<br>Costs: 10 riders<br>Bought: 0</button>
+      <button id="length4" onclick="buyLengthBuyable(4)">Press this to get 10 more meters of length<br>Costs: 25 riders<br>Bought: 0</button>
+      <button id="length5" onclick="buyLengthBuyable(5)">Press this to get 25 more meters of length<br>Costs: 75 riders<br>Bought: 0</button>
+      <button id="length6" onclick="buyLengthBuyable(6)">Press this to get 50 more meters of length<br>Costs: 200 riders<br>Bought: 0</button>
     </div>
     <!-- These are buyables that you can purchase to help you in the game. -->
     <div id="hillsUnlock">
-      <button id="hillsButton" onClick="buyLengthUpgrade()">Press here to unlock the hills layer<br>Requires 250 meters of length</button>
+      <button id="hillsButton" onclick="buyLengthUpgrade()">Press here to unlock the hills layer<br>Requires 500 meters of length</button>
     </div>
 
   </body>

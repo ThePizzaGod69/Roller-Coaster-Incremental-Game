@@ -6,8 +6,7 @@
     <title>Roller Coaster Incremental</title> 
     <link href='inversions.css' rel='stylesheet' type='text/css' /> 
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'> </script> 
-    <script src="../main.js"></script>
-    <script src='inversions.js'></script> 
+    <script src="https://cdn.jsdelivr.net/npm/break_eternity.js@2"></script>
   </head> 
   <body> 
     <header>
@@ -23,44 +22,32 @@
       <a href="../hills-page/hills.html"><button>hills</button></a>
       <a><button id="inversionsButton">inversions</button></a>
       <a href="../theming-page/theming.html"><button>theming</button></a>
-      <a href="../materials-page/materials.html"><button>materials</button></a>
-      <a href="../planets-page/planets.html"><button>planets</button></a>
       <a href="../options-page/options.html"><button>options</button></a>
     </nav>
     <div id="inversionsReset">
-    <button>Reset all previous progress for
-    1 inversions<br> next at 350 hills</button></div>
+    <button  id="inversionsResetButton">Reset all previous progress for
+    0 inversions<br> next at 100 hills</button></div>
     <!--By resetting all previous progress you can gain an inversion which is the resource for this page.-->
     <div class="buyableBoxes">
-      <button id="inversion1">
-        Corkscrew<br>
-Cost: 1 inversion<br>
-gives*5 rider gain</button>
+      <button id="inversion1" onclick="buyInversionBuyable(5)">
     <!--Lets you boost hill gain-->
-        <button id="inversion2">Vertical Loop<br>
-          Cost: 1 inversion<br>
-          makes hill gain ^1.05
+        <button id="inversion2" onclick="buyInversionBuyable(6)">
           <!--Lets you make a vertical loop a hill gain.-->
        </button>
-      <button id="inversion3">Roll<br>
-        Cost: 1 inversion<br>
-        makes rider gain ^1.1</button>
+      <button id="inversion3" onclick="buyInversionBuyable(7)">
         <!--Rider gain increase.-->
-      <br>
-      <button id="inversion4">Dive Loop<br>
-        Cost: 5 inversions<br>
-        rider gain *6.9
+      <button id="inversion4" onclick="buyInversionBuyable(8)">
       </button>
-      <button id="inversion5">Batwing<br>
-        Cost: 10 inversions<br>
-        hill gain *10
+      <button id="inversion5" onclick="buyInversionBuyable(9)">
       </button>
-      <button id="inversion6">Pretzel Knot<br>
-        Cost: 25 inversions<br>
-        makes rider gain ^1.5
+      <button id="inversion6" onclick="buyInversionBuyable(10)">
       </button>
       <!--These are buyables.-->
     </div>
-
+    <div id="themesUnlock">
+      <button id="themesButton" onclick="buyThemeUpgrade()">Press here to unlock the themes layer<br>Requires 100 Inversions</button>
+    </div>
   </body> 
-  </html>
+  <script src="../main.js"></script>
+  <script src='inversions.js'></script> 
+</html>

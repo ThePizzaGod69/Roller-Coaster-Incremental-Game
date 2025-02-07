@@ -3,6 +3,7 @@ body{background-image: radial-gradient(circle, #6b1a3a, #352562)}
 header {
     display: flex;
     justify-content: space-between;
+
   }
   
   #topButtons{
@@ -41,7 +42,7 @@ header {
     width: 90%;
     height: 50%;
     button{
-      background-color:#9fdeff;
+      background-color:#ff0000;
       border-radius:10px;
       width: 40%;
       text-align:center;

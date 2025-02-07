@@ -1,60 +1,63 @@
-let inversionBuyable1 = {
-    text1: "Press this to get 1 more meter of inversion<br>Requires: ",
-    text2: " inversions<br>Bought: ",
-    count: 0,
-    startCost: 1,
-    cost: 1,
-    exponent: 1.1,
-    button: $("#inversion1")
-};
 
-let inversionBuyable2 = {
-    text1: "Roll<br>(makes rider gain ^1.1)<br>Cost: ",
-    text2: " inversions<br>Bought: ",
-    count: 0,
-    startCost: 1,
-    cost: 1,
-    exponent: 1.2,
-    button: $("#inversion2")
-};
-
-let inversionBuyable3 = {
-    text1: "Vertical Loop<br>           Cost: 1 inversion<br>makes hill gain ^1.05",
-    text2: " inversions<br>Bought: ",
-    count: 0,
-    startCost: 1,
-    cost: 1,
-    exponent: 1.4,
-    button: $("#inversion3")
-};
-
-let inversionBuyable4 = {
-    text1: "Dive Loop<br>(rider gain *6.9)<br>Cost: ",
-    text2: " inversions<br>Bought: ",
-    count: 0,
-    startCost: 5,
-    cost: 5,
-    exponent: 1.7,
-    button: $("#inversion4")
-};
-let inversionBuyable5 = {
-    text1: "Batwing<br>(hill gain *10)<br>Cost: ",
-    text2: " inversions<br>Bought: ",
-    count: 0,
-    startCost: 10,
-    cost: 10,
-    exponent: 2,
-    button: $("#inversion5")
-};
-let inversionBuyable6 = {
-    text1: "Pretzel Knot<br>(rider gain^1.5)<br>Cost: ",
-    text2: "inversions<br>Bought: ",
-    count: 0,
-    startCost: 25,
-    cost: 25,
-    exponent: 2.5,
-    button: $("#inversion6")
-};
+function updateInversionBuyables() {
+    $("#inversion1").html("Corkscrew<br>Cost: " + inversionArray[5].cost.toString() + " inversion<br>gives*25 rider gain<br>Bought: "+ inversionArray[5].count.toString());
+    $("#inversion2").html("Vertical Loop<br>Cost: " + inversionArray[6].cost.toString() + " inversion<br>makes base rider gain ^1.3<br>Bought: " + inversionArray[6].count.toString());
+    $("#inversion3").html("Roll<br>Cost: " + inversionArray[7].cost.toString() + " inversion<br>makes base rider gain ^1.5<br>Bought: " + inversionArray[7].count.toString());
+    $("#inversion4").html("Dive Loop<br>Cost: " + inversionArray[8].cost.toString() + " inversions<br>rider gain *69<br>Bought: " + inversionArray[8].count.toString());
+    $("#inversion5").html("Batwing<br>Cost: " + inversionArray[9].cost.toString() + " inversions<br>rider gain *420<br>Bought: " + inversionArray[9].count.toString());
+    $("#inversion6").html("Pretzel Knot<br>Cost: " + inversionArray[10].cost.toString() + " inversions<br>makes rider gain ^2.5<br>Bought: " + inversionArray[10].count.toString());
+    if(inversionArray[12]==true){$("#hillsButton").html("You have unlocked hills")}
+}
+function updateInversions(){
+    inversionArray[2]=inversionArray[1].times(inversionArray[4].pow(inversionArray[0]));
+    $("#inversionsResetButton").text("Reset Previous progress for an Inversion"+"\n"+"Next at: "+inversionArray[2].toString()+" Hills");
+}
+function inversionsDisplay(){
+    $("#inversionText").html("Your Coaster has "+inversionArray[0].toString()+" Inversions")
+}
+function buyInversionBuyable(value){
+    if (inversionArray[0].gte(inversionArray[value].cost)==true) {
+        inversionArray[0] = (inversionArray[0].minus(inversionArray[value].cost)).floor(); // Take away riders
+        inversionArray[value].count = inversionArray[value].count.plus(new Decimal(1)); // Increment count
+        inversionArray[value].cost = (inversionArray[value].startCost.times(inversionArray[value].exponent.pow(inversionArray[value].count))).ceil(); // Calculate new cost
+        // Update cost
+        giveBuyableEffect(value-4);
+        updateInversionBuyables(); // Update the buyable UI
+        saveGame();
+    }
+}
+function giveBuyableEffect(buyable){
+    if(buyable===1){
+        riderArray[3]=riderArray[3].times(new Decimal(25));
+    }
+    else if(buyable===2){
+        riderArray[2]=riderArray[2].times(new Decimal(1.3));
+    }
+    else if(buyable===3){
+        riderArray[2]=riderArray[2].times(new Decimal(1.5));
+    }
+    else if(buyable===4){
+        riderArray[3]=riderArray[3].times(new Decimal(69));
+    }
+    else if(buyable===5){
+        riderArray[3]=riderArray[3].times(new Decimal(420));
+    }
+    else if(buyable===6){
+        riderArray[2]=riderArray[2].times(new Decimal(2.5));
+    }
+    saveGame();
+}
 let inversionUpgrade = {
     text:"Press here to unlock themes<br>Requires 100 inversions",
 }
+loadGame();
+updateRiders();
+updateInversionBuyables();
+inversionsDisplay();
+window.setInterval(function(){
+    incrementRiders();
+    updateRiders();
+    updateInversionBuyables();
+    updateInversions();
+    inversionsDisplay();
+}, 100);
