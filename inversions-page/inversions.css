@@ -1,6 +1,7 @@
 body{background-image: linear-gradient(to bottom right, #5efd8b, #fffd4d)}
 
 header {
+  text-shadow: 1px 1px 3px darkgray;
   display: flex;
   justify-content: space-between;
 }

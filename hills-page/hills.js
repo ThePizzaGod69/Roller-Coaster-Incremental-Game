@@ -48,7 +48,7 @@ function giveEffect(newUpgrade){
 //updates the hill total
 function updateHills(){
     hillsArray[2]=hillsArray[1].times(hillsArray[4].pow(hillsArray[0]));
-    $("#hillResetButton").html("Reset Previous progress for a hill"+"\n"+"Next at: "+hillsArray[2].toString()+" Meters of Length");
+    $("#hillResetButton").html("Reset Previous progress for a hill"+"\n"+"Next at: "+hillsArray[2].toPrecision(5)+" Meters of Length");
 }
 //updates the button used to buy hills
 function hillsDisplay(){

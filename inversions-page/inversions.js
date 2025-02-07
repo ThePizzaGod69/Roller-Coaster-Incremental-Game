@@ -1,11 +1,15 @@
-
+function inversionsReset(){
+    if(hillsArray[0].gte(inversionArray[2])){
+        hillsArray[0].minus()
+    }
+}
 function updateInversionBuyables() {
-    $("#inversion1").html("Corkscrew<br>Cost: " + inversionArray[5].cost.toString() + " inversion<br>gives*25 rider gain<br>Bought: "+ inversionArray[5].count.toString());
-    $("#inversion2").html("Vertical Loop<br>Cost: " + inversionArray[6].cost.toString() + " inversion<br>makes base rider gain ^1.3<br>Bought: " + inversionArray[6].count.toString());
-    $("#inversion3").html("Roll<br>Cost: " + inversionArray[7].cost.toString() + " inversion<br>makes base rider gain ^1.5<br>Bought: " + inversionArray[7].count.toString());
-    $("#inversion4").html("Dive Loop<br>Cost: " + inversionArray[8].cost.toString() + " inversions<br>rider gain *69<br>Bought: " + inversionArray[8].count.toString());
-    $("#inversion5").html("Batwing<br>Cost: " + inversionArray[9].cost.toString() + " inversions<br>rider gain *420<br>Bought: " + inversionArray[9].count.toString());
-    $("#inversion6").html("Pretzel Knot<br>Cost: " + inversionArray[10].cost.toString() + " inversions<br>makes rider gain ^2.5<br>Bought: " + inversionArray[10].count.toString());
+    $("#inversion1").html("Corkscrew<br>Cost: " + inversionArray[5].cost.toPrecision(5) + " inversion<br>gives*25 rider gain<br>Bought: "+ inversionArray[5].count.toString());
+    $("#inversion2").html("Vertical Loop<br>Cost: " + inversionArray[6].cost.toPrecision(5) + " inversion<br>makes base rider gain ^1.3<br>Bought: " + inversionArray[6].count.toString());
+    $("#inversion3").html("Roll<br>Cost: " + inversionArray[7].cost.toPrecision(5) + " inversion<br>makes base rider gain ^1.5<br>Bought: " + inversionArray[7].count.toString());
+    $("#inversion4").html("Dive Loop<br>Cost: " + inversionArray[8].cost.toPrecision(5) + " inversions<br>rider gain *69<br>Bought: " + inversionArray[8].count.toString());
+    $("#inversion5").html("Batwing<br>Cost: " + inversionArray[9].cost.toPrecision(5) + " inversions<br>rider gain *420<br>Bought: " + inversionArray[9].count.toString());
+    $("#inversion6").html("Pretzel Knot<br>Cost: " + inversionArray[10].cost.toPrecision(5) + " inversions<br>makes rider gain ^2.5<br>Bought: " + inversionArray[10].count.toString());
     if(inversionArray[12]==true){$("#hillsButton").html("You have unlocked hills")}
 }
 function updateInversions(){

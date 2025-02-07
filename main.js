@@ -14,8 +14,8 @@ function incrementRiders() {
 }
 
 function updateRiders() {
-    $("#riderText").html("You have " + riderArray[0].toString() + " riders");
-    $("#riderGainText").html("You are getting " + riderArray[4].toString() + " riders per second");
+    $("#riderText").html("You have " + riderArray[0].toPrecision(5) + " riders");
+    $("#riderGainText").html("You are getting " + riderArray[4].toPrecision(5) + " riders per second");
 }
 // Function to update the UI with the latest rider and length data
 
@@ -159,9 +159,9 @@ function deleteSave(){
             false,//if you have inversions unlocked(11)
         ];
         inversionArray=[
-            new Decimal(100),//inversion count(0)
-            new Decimal(500),//base cost of inversions(1)
-            new Decimal(500),//current inversion cost(2)
+            new Decimal(0),//inversion count(0)
+            new Decimal(50),//base cost of inversions(1)
+            new Decimal(50),//current inversion cost(2)
             new Decimal(0),//inversion gain(3)
             new Decimal(1.1),//inversion cost increase exponent(4)
         

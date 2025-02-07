@@ -1,6 +1,7 @@
 body{background-image: linear-gradient(to bottom right, #5cc1e6, #5efd8b)}
 
 header {
+  text-shadow: 1px 1px 3px darkgray;
   display: flex;
   justify-content: space-between;
 }
@@ -40,7 +41,7 @@ header {
     width: 70%;
     height: 50%;
     button{
-    background-color:#b29fff;
+    background-image:linear-gradient(to bottom,#b29fff,#9583dd);
     border-radius:15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px}

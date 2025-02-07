@@ -58,7 +58,7 @@ header {
     width: 70%;
     height: 50%;
     button{
-    background-color:#b29fff;
+    background-image:linear-gradient(to bottom,#b29fff,#9583dd);
     border-radius:15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px}

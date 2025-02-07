@@ -1,6 +1,6 @@
 
 // Function to update the length of the coaster
-function updateTheming() {////////////////////////////////////////////add code to go up
+function updateTheming() {themingArray[0]=themingArray.plus(themingArray[0].pow(themingArray[2]))
     $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
     $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[2]).toString() + " Theme Points per second");
     $("#themePointText").text("You have " + themingArray[1].toString() + " Theme Points");
