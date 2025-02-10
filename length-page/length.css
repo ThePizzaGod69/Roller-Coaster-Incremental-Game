@@ -25,6 +25,7 @@ header {
       font-family: 'Times New Roman', Times, serif;
     }
     #lengthButton{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       background-color:#1fb161e8;
       color: black;
     }
@@ -58,6 +59,7 @@ header {
     width: 70%;
     height: 50%;
     button{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-image:linear-gradient(to bottom,#b29fff,#9583dd);
     border-radius:15px;
     font-family: 'Times New Roman', Times, serif;
