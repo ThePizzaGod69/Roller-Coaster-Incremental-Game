@@ -1,6 +1,7 @@
 body{background-image: linear-gradient(to bottom right, #5efd8b, #fffd4d)}
 
 header {
+  text-shadow: 1px 1px 3px darkgray;
   display: flex;
   justify-content: space-between;
 }
@@ -17,16 +18,18 @@ header {
     
 
     button{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       background-color:#005326f1;
       color: white;
       border-radius:10px;
       padding: 20px;
-    font-size: 155%;
+      font-size: 155%;
       font-family: 'Times New Roman', Times, serif;
 
 
   }
   #inversionsButton{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color:#1fb161e8;
     color: black;
   }
@@ -40,10 +43,12 @@ header {
     width: 70%;
     height: 50%;
     button{
-    background-color:#b29fff;
-    border-radius:15px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px}
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-image:linear-gradient(to bottom,#b29fff,#9583dd);
+      border-radius:15px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px
+    }
   }
   
   .buyableBoxes{
@@ -55,6 +60,7 @@ header {
     width: 90%;
     height: 50%;
     button{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       background-image: linear-gradient(to bottom right, #00e8e1, #007fb2);
       border-radius:10px;
       width: 40%;
@@ -66,8 +72,10 @@ header {
     }
   }
   .riderCount{
+    text-shadow: 1px 1px 3px darkgray;
     color: black;
   }
   #inversionText{
+    text-shadow: 1px 1px 3px darkgray;
     color: black;
   }
