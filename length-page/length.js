@@ -1,17 +1,4 @@
-// Function to handle buying length buyables
-function buyLengthBuyable(value) {
-    if (riderArray[0].gte(lengthArray[value].cost)==true) {
-        riderArray[0] = riderArray[0].minus(lengthArray[value].cost); // Take away riders
-        lengthArray[value].count = lengthArray[value].count.plus(new Decimal(1)); // Increment count
-        lengthArray[0] = lengthArray[0].plus(lengthArray[value].adder); // Increase length by 1 meter
-        let newCost = lengthArray[value].startCost.times(lengthArray[value].exponent.pow(lengthArray[value].count)); // Calculate new cost
-        lengthArray[value].cost = newCost; // Update cost
-        updateLengthBuyables(); // Update the buyable UI
-        saveGame();
-    }
-    let newCost = lengthArray[value].startCost.times(lengthArray[value].exponent.pow(lengthArray[value].count)); // Calculate new cost
-    lengthArray[value].cost = newCost;
-}
+
 //Function to handle the acquisition of the upgrade
 function buyLengthUpgrade(){
     if(lengthArray[0].gte(new Decimal(500))==true){
