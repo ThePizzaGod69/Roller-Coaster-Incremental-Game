@@ -1,11 +1,12 @@
+/*Background color of the page*/
 body{background-image: linear-gradient(to bottom right, #5efd8b, #fffd4d)}
-
+/*Color desgin for the name of the page*/
 header {
   text-shadow: 1px 1px 3px darkgray;
   display: flex;
   justify-content: space-between;
 }
-
+/*Color and desgin for the top buttons*/
 #topButtons{
   margin:auto;
   text-align:center;
