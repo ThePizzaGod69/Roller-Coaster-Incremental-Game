@@ -23,7 +23,7 @@ function updateInversions(){
 function inversionsDisplay(){
     $("#inversionText").html("Your Coaster has "+inversionArray[0].toPrecision(5)+" Inversions")
 }
-(function buyInversionBuyable(value){
+function buyInversionBuyable(value){
     if (inversionArray[0].gte(inversionArray[value].cost)==true) {
         inversionArray[0] = (inversionArray[0].minus(inversionArray[value].cost)).floor(); // Take away riders
         inversionArray[value].count = inversionArray[value].count.plus(new Decimal(1)); // Increment count
@@ -52,7 +52,7 @@ function inversionsDisplay(){
         updateInversionBuyables(); // Update the buyable UI
         saveGame();
     }
-})
+}
 function giveBuyableEffect(buyable){
     if(buyable===1){
         riderArray[3]=riderArray[3].times(new Decimal(25));
@@ -82,10 +82,10 @@ updateRiders();
 updateInversionBuyables();
 inversionsDisplay();
 window.setInterval(function(){
+    useAutobuyers();
     incrementRiders();
     updateRiders();
     updateInversionBuyables();
     updateInversions();
     inversionsDisplay();
-    useAutobuyers();
 }, 100);

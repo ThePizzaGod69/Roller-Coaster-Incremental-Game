@@ -1,9 +1,9 @@
 
 // Function to update the length of the coaster
-function updateTheming() {themingArray[0]=themingArray.plus(themingArray[0].pow(themingArray[2]))
+function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[2]))
     $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
     $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[2]).toString() + " Theme Points per second");
-    $("#themePointText").text("You have " + themingArray[1].toString() + " Theme Points");
+    $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
 }
 // Function to update the length buyable buttons with their current cost and count
 function updateThemingBuyables() {
@@ -24,14 +24,36 @@ function buyThemingBuyable(value) {
         themingArray[0] = themingArray[0].plus(themingArray[value].adder); // Increase length by 1 meter
         let newCost = themingArray[value].startCost.times(themingArray[value].exponent.pow(themingArray[value].count)); // Calculate new cost
         themingArray[value].cost = newCost; // Update cost
-        updateLengthBuyables(); // Update the buyable UI
+        updateThemingBuyables(); // Update the buyable UI
+        giveBuyableEffect(value-2);
         saveGame();
     }
     themingArray[value].cost = themingArray[value].startCost.times(themingArray[value].exponent.pow(themingArray[value].count)); // Calculate new cost
     
 }
+function giveBuyableEffect(buyable){
+    if(buyable===1){
+        riderArray[2]=riderArray[2].times(new Decimal(1.4));
+    }
+    else if(buyable===2){
+        riderArray[2]=riderArray[2].times(new Decimal(1.7));
+    }
+    else if(buyable===3){
+        riderArray[2]=riderArray[2].times(new Decimal(2.3));
+    }
+    else if(buyable===4){
+        riderArray[2]=riderArray[2].times(new Decimal(4));
+    }
+    else if(buyable===5){
+        riderArray[2]=riderArray[2].times(new Decimal(6));
+    }
+    else if(buyable===6){
+        themingArray[2]=themingArray[2].times(new Decimal(1.2));
+    }
+    saveGame();
+}
 function buyEndUpgrade(){
-    if(themingArray[1].gte(new Decimal(1e10))==true){
+    if(themingArray[1].gte(new Decimal(1e10))){
         if(themingArray[9]==false){
             themingArray[9]=true;
 
@@ -47,4 +69,5 @@ updateThemingBuyables();
 window.setInterval(function(){
     incrementRiders();
     updateRiders();
+    updateTheming();
 }, 100);

@@ -86,6 +86,7 @@ updateRiders();
 hillsDisplay();
 updateHills();
 window.setInterval(function(){
+    useAutobuyers();
     incrementRiders();
     updateRiders();
     hillsDisplay();

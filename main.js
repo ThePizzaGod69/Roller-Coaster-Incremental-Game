@@ -234,7 +234,7 @@ function deleteSave(){
             }
         ];
         themingArray=[
-            new Decimal(0),//themes(0)
+            new Decimal(1e11),//themes(0)
             new Decimal(0),//theme points
             new Decimal(1),//exponent applied to themes to generate theme points
             {//buyable 1 stuff(1)
@@ -284,7 +284,7 @@ function buyLengthBuyable(value) {
         lengthArray[0] = lengthArray[0].plus(lengthArray[value].adder); // Increase length by 1 meter
         let newCost = lengthArray[value].startCost.times(lengthArray[value].exponent.pow(lengthArray[value].count)); // Calculate new cost
         lengthArray[value].cost = newCost; // Update cost
-        updateLengthBuyables(); // Update the buyable UI
+        if (window.location.pathname == "/length.html"){updateLengthBuyables()}; // Update the buyable UI
         saveGame();
     }
     let newCost = lengthArray[value].startCost.times(lengthArray[value].exponent.pow(lengthArray[value].count)); // Calculate new cost

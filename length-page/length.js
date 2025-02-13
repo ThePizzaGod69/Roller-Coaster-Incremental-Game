@@ -32,6 +32,7 @@ updateLength();
 updateLengthBuyables();
 // Update the game state 10 times every second
 window.setInterval(function(){
+    useAutobuyers();
     incrementRiders();
     updateRiders();
     updateLength();
