@@ -18,10 +18,10 @@ function updateThemingBuyables() {
 
 // Function to handle buying a length buyable (1 meter)
 function buyThemingBuyable(value) {
-    if (themingArray[0].gte(themingArray[value].cost)==true) {
-        themingArray[0] = themingArray[0].minus(themingArray[value].cost); // Take away riders
+    if (themingArray[1].gte(themingArray[value].cost)==true) {
+        themingArray[1] = themingArray[1].minus(themingArray[value].cost); // Take away riders
         themingArray[value].count = themingArray[value].count.plus(new Decimal(1)); // Increment count
-        themingArray[0] = themingArray[0].plus(themingArray[value].adder); // Increase length by 1 meter
+        themingArray[1] = themingArray[1].plus(themingArray[value].adder); // Increase length by 1 meter
         let newCost = themingArray[value].startCost.times(themingArray[value].exponent.pow(themingArray[value].count)); // Calculate new cost
         themingArray[value].cost = newCost; // Update cost
         updateThemingBuyables(); // Update the buyable UI
@@ -56,7 +56,7 @@ function buyEndUpgrade(){
     if(themingArray[1].gte(new Decimal(1e10))){
         if(themingArray[9]==false){
             themingArray[9]=true;
-
+            updateThemingBuyables()
             saveGame();
         }
     }
