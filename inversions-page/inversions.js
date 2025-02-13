@@ -13,7 +13,7 @@ function updateInversionBuyables() {
     $("#inversion3").html("Roll<br>Cost: " + inversionArray[7].cost.toPrecision(5) + " inversion<br>makes base rider gain ^1.5<br>Bought: " + inversionArray[7].count.toPrecision(5));
     $("#inversion4").html("Dive Loop<br>Cost: " + inversionArray[8].cost.toPrecision(5) + " inversions<br>rider gain *69<br>Bought: " + inversionArray[8].count.toPrecision(5));
     $("#inversion5").html("Batwing<br>Cost: " + inversionArray[9].cost.toPrecision(5) + " inversions<br>rider gain *420<br>Bought: " + inversionArray[9].count.toPrecision(5));
-    $("#inversion6").html("Pretzel Kot<br>Cost: " + inversionArray[10].cost.toPrecision(5) + " inversions<br>makes rider gain ^2.5<br>Bought: " + inversionArray[10].count.toPrecision(5));
+    $("#inversion6").html("Pretzel Knot<br>Cost: " + inversionArray[10].cost.toPrecision(5) + " inversions<br>makes rider gain ^2.5<br>Bought: " + inversionArray[10].count.toPrecision(5));
     if(inversionArray[12]==true){$("#themesButton").html("You have unlocked themes")}
 }
 function updateInversions(){
