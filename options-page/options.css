@@ -54,7 +54,7 @@ header {
     }
 }
 
-#indexButtons{ 
+#indexAndOut{ 
   margin:auto;
   text-align:center;
   display: flex;

@@ -81,7 +81,7 @@ function hillsReset(){
     }
     saveGame()
 }
-loadGame();
+loadGame(false);
 updateRiders();
 hillsDisplay();
 updateHills();

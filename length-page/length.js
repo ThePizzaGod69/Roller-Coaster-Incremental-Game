@@ -26,7 +26,7 @@ function updateLength() {
 }
 
 //initializing my data and the page
-loadGame();
+loadGame(false);
 updateRiders();
 updateLength();
 updateLengthBuyables();

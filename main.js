@@ -276,7 +276,7 @@ function deleteSave(){
             false
             ]
 }
-// Function to handle buying length buyables
+// Function to handle buying length buyables, and is on the main js page so autobuyers work
 function buyLengthBuyable(value) {
     if (riderArray[0].gte(lengthArray[value].cost)==true) {
         riderArray[0] = riderArray[0].minus(lengthArray[value].cost); // Take away riders
@@ -295,8 +295,17 @@ function fixLength(){
     const myThing=new Decimal(lengthArray[1].count).times(new Decimal(1)).plus(new Decimal(lengthArray[2].count).times(new Decimal(2)).plus(new Decimal(lengthArray[3].count).times(new Decimal(5)).plus(new Decimal(lengthArray[4].count).times(new Decimal(10)).plus(new Decimal(lengthArray[5].count).times(new Decimal(20)).plus(new Decimal(lengthArray[6].count).times(new Decimal(50)))))));
     lengthArray[0]=myThing}
 
-function loadGame() {
-    const theTester=JSON.parse(localStorage.getItem("everything"));
+function loadGame(fromImport) {
+    let theTester;//used console logs to determine that I needed to define theTester before the conditionals
+    if(fromImport === true){
+        const yourMom =$("#goodBox").val();
+        console.log(yourMom);
+
+        theTester=JSON.parse(yourMom)
+    }
+    else{
+        theTester=JSON.parse(localStorage.getItem("everything"))
+    }
     if (theTester) {
         fullData=theTester;
 

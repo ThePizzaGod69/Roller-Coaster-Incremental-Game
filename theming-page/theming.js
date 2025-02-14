@@ -62,7 +62,7 @@ function buyEndUpgrade(){
     }
 }
 
-loadGame();
+loadGame(false);
 updateRiders();
 updateTheming();
 updateThemingBuyables();

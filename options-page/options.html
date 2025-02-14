@@ -31,10 +31,11 @@
     <button id="saveDelete" onclick="deleteSave()">Click this to delete your save</button>
   </div>
 
-  <div id="in/exButtons">
-    <button id="import">Import</button>
-    <button id="export">Export</button>
-  </div>
+  <form id="inAndOut">
+    <input type="button" id="import" value="Import" onclick="loadGame(true)">
+    <input type="button" id="export" value="Export" onclick="exportGame()">
+    <input type="text" id="goodBox" value="saves will be input or exported here">
+  </form>
 </body>
 <script src="../main.js"></script>
 <script src="options.js"></script>

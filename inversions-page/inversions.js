@@ -77,7 +77,7 @@ function giveBuyableEffect(buyable){
 let inversionUpgrade = {
     text:"Press here to unlock themes<br>Requires 100 inversions",
 }
-loadGame();
+loadGame(false);
 updateRiders();
 updateInversionBuyables();
 inversionsDisplay();
