@@ -1,6 +1,7 @@
-body{background-image: radial-gradient(circle, #6b1a3a, #352562)}
+body{background-image: radial-gradient(circle, #352562, #6b1a3a)}
 
 header {
+    font-size: 20px;
     text-shadow: 1px 1px 3px darkgray;
     display: flex;
     justify-content: space-between;
