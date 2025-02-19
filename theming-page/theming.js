@@ -43,19 +43,19 @@ function giveBuyableEffect(buyable){
         riderArray[2]=riderArray[2].times(new Decimal(1.4));
     }
     else if(buyable===2){
-        themingArray[2]=themingArray[2].times(new Decimal(1.1));
+        themingArray[4]=themingArray[4].times(new Decimal(1.1));
     }
     else if(buyable===3){
         riderArray[2]=riderArray[2].times(new Decimal(2.3));
     }
     else if(buyable===4){
-        themingArray[2]=themingArray[2].times(new Decimal(1.3));
+        themingArray[4]=themingArray[4].times(new Decimal(1.3));
     }
     else if(buyable===5){
         riderArray[2]=riderArray[2].times(new Decimal(6));
     }
     else if(buyable===6){
-        themingArray[2]=themingArray[2].times(new Decimal(1.5));
+        themingArray[4]=themingArray[4].times(new Decimal(1.5));
     }
     saveGame();
 }
