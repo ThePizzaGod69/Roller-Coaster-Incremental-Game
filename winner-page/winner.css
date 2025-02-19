@@ -6,3 +6,31 @@ header {
     justify-content: space-between;
     color:white;
   }
+
+#inAndOut{ 
+  margin:auto;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 50%;
+  input{
+    background-color:#9fdeff;
+    border-radius:10px;
+    width: 40%;
+    text-align:center;
+    min-height: 150px;
+    margin: 10px;
+    font-size: 155%;
+    font-family: 'Times New Roman', Times, serif;}
+}
+#goodBox{
+  background-color:#efefef;
+  border-radius:10px;
+  width: 40%;
+  text-align:center;
+  min-height: 20px;
+  margin: 10px;
+  font-size: 155%;
+  font-family: 'Times New Roman', Times, serif;
+}
