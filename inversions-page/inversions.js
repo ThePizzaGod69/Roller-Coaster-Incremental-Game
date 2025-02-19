@@ -83,6 +83,7 @@ loadGame(false);
 updateRiders();
 updateInversionBuyables();
 inversionsDisplay();
+hideStuff();
 window.setInterval(function(){
     useAutobuyers();
     incrementRiders();
