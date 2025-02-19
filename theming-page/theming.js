@@ -8,10 +8,10 @@ function themesReset(){
 }
 // Function to update the length of the coaster
 function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[4]))
-    $("#themingResetButton").html("Get a Theme"+"\n"+"Next at "+themingArray[2].toPrecision(5)+"Inversions")
-    $("#themingText").text("You have " + themingArray[0].toPrecision(5) + " Themes");
-    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toPrecision(5) + " Theme Points per second");
-    $("#themingPointText").text("You have " + themingArray[1].toPrecision(5) + " Theme Points");
+    $("#themingResetButton").html("Get a Theme"+"\n"+"Next at "+themingArray[2].toString()+"Inversions")
+    $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
+    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toString() + " Theme Points per second");
+    $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
 }
 // Function to update the length buyable buttons with their current cost and count
 function updateThemingBuyables() {
@@ -21,7 +21,6 @@ function updateThemingBuyables() {
     $("#theme4").html("New paint job<br>Cost: " + themingArray[8].cost.toPrecision(5) + " theme points<br>base rider gain ^1.3<br>Bought: " + themingArray[8].count.toPrecision(5));
     $("#theme5").html("Do a holiday event<br>Cost: " + themingArray[9].cost.toPrecision(5) + " theme points<br>base rider gain ^6<br>Bought: " + themingArray[9].count.toPrecision(5));
     $("#theme6").html("Change the park name<br>Cost: " + themingArray[10].cost.toPrecision(5) + " theme points<br>theme point gain ^1.5<br>Bought: " + themingArray[10].count.toPrecision(5));
-    if(themingArray[9]==true){$("#endButton").html("YOU WIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")}
 }
 
 // Function to handle buying any theming buyable
