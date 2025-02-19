@@ -267,7 +267,7 @@ function deleteSave(){
             new Decimal(0),//themes(0)
             new Decimal(0),//theme points(1)
             new Decimal(30),//theme cost(2)
-            new Decimal(1.2),//theme point cost exponent(3)
+            new Decimal(1.05),//theme point cost exponent(3)
             new Decimal(1),//exponent applied to themes to generate theme points(4)
             {//buyable 1 stuff(5)
                 count: new Decimal(0),
