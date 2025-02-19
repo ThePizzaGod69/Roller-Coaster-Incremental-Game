@@ -62,7 +62,7 @@ function giveBuyableEffect(buyable){
 function buyEndUpgrade(){
     if(themingArray[1].gte(Decimal.fromComponents(1,2,100))){
             themingArray[11]=true;
-            window.location.href = '../winner-page/winner-html';
+            window.location.href = './winner-page/winner-html';
             saveGame();}
 
         
