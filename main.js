@@ -265,7 +265,7 @@ function deleteSave(){
         ];
         themingArray=[
             new Decimal(0),//themes(0)
-            new Decimal(eee100),//theme points(1)
+            Decimal.fromComponents(1,7,7),//theme points(1)
             new Decimal(30),//theme cost(2)
             new Decimal(1.05),//theme point cost exponent(3)
             new Decimal(1),//exponent applied to themes to generate theme points(4)
