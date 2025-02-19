@@ -3,6 +3,7 @@ function exportGame(){
 }
 loadGame(false);
 updateRiders();
+hideStuff();
 window.setInterval(function(){
     incrementRiders();
     updateRiders();

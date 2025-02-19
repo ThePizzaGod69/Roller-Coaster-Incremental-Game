@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html> 
+  <head> 
+    <meta charset='utf-8'> 
+    <meta name='viewport' content='width=device-width'> 
+    <title>Roller Coaster Incremental</title> 
+    <link href='options.css' rel='stylesheet' type='text/css' /> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/break_eternity.js@2"></script>
+
+  </head>
+    <header>
+            <h3 id="riderGainText">Congratulations!<br>You beat the  current version of the game<br>Press the left button to start again, or the right button to export your save</h2>
+  </header>
+  
+<body>
+
+
+  <form id="inAndOut">
+    <input type="button" id="import" value="Reset" onclick="deleteSave()">
+    <input type="button" id="export" value="Export" onclick="exportGame()">
+    <input type="text" id="goodBox" value="saves will be exported here">
+  </form>
+</body>
+<script src="../main.js"></script>
+</html>

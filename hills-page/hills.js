@@ -85,6 +85,7 @@ loadGame(false);
 updateRiders();
 hillsDisplay();
 updateHills();
+hideStuff();
 window.setInterval(function(){
     useAutobuyers();
     incrementRiders();
