@@ -76,6 +76,7 @@ function giveBuyableEffect(buyable){
 function buyInversionUpgrade(){
     if((inversionArray[0]).gt(new Decimal(30))){
         hillsArray[13]=true;
+        window.location.href = '../theming-page/theming.html';
     }
 }
 loadGame(false);
