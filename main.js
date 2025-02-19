@@ -207,8 +207,8 @@ function deleteSave(){
             false,//if you have hill upgrade 4[8]
             false,//if you have hill upgrade 5[9]
             false,//if you have hill upgrade 6[10]
-            true,//if you have inversions unlocked[11]
-            true,//when hills has been unlocked[12]
+            false,//if you have inversions unlocked[11]
+            false,//when hills has been unlocked[12]
             false,//when themes has been unlocked[13]
         ];
         inversionArray=[
@@ -255,12 +255,12 @@ function deleteSave(){
             exponent: new Decimal(2.5),
             },
             {
-            autobuyer1: true,
-            autobuyer2: true,
-            autobuyer3: true,
-            autobuyer4: true,
-            autobuyer5: true,
-            autobuyer6: true,
+            autobuyer1: false,
+            autobuyer2: false,
+            autobuyer3: false,
+            autobuyer4: false,
+            autobuyer5: false,
+            autobuyer6: false,
             }
         ];
         themingArray=[
