@@ -8,6 +8,7 @@ function themesReset(){
 }
 // Function to update the length of the coaster
 function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[4]))
+    $("#themingResetButton").html("Get a Theme"+"\n"+"Next at "+themingArray[2].toString()+"Inversions")
     $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
     $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toString() + " Theme Points per second");
     $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
