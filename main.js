@@ -140,7 +140,7 @@ function saveGame() {
 function deleteSave(){
         riderArray = [
                 new Decimal(1),//rider count[0]
-                new Decimal(0.1),//base rider gain[1]
+                new Decimal(0),//base rider gain[1]
                 new Decimal(1),//rider exponent[2]
                 new Decimal(1),//rider multiplier[3]
                 new Decimal(0)//rider gain[4]
@@ -265,7 +265,7 @@ function deleteSave(){
         ];
         themingArray=[
             new Decimal(0),//themes(0)
-            Decimal.fromComponents(1,7,7),//theme points(1)
+            new Decimal(0),//theme points(1)
             new Decimal(30),//theme cost(2)
             new Decimal(1.05),//theme point cost exponent(3)
             new Decimal(1),//exponent applied to themes to generate theme points(4)
