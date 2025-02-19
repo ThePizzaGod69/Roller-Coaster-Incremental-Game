@@ -326,8 +326,6 @@ function loadGame(fromImport) {
     if(fromImport === true){
         //imports the value from the input box if you are importing
         const yourMom =$("#goodBox").val();
-        console.log(yourMom);//logs it to check the import value
-
         theTester=JSON.parse(yourMom)
     }
     else{
