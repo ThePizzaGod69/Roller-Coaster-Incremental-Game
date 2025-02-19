@@ -5,6 +5,7 @@ loadGame(false);
 updateRiders();
 hideStuff();
 window.setInterval(function(){
+    useAutobuyers();
     incrementRiders();
     updateRiders();
 }, 100);
