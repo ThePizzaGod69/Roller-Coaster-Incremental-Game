@@ -10,8 +10,8 @@ function themesReset(){
 function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[4]))
     $("#themingResetButton").html("Get a Theme"+"\n"+"Next at "+themingArray[2].toString()+"Inversions")
     $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
-    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toString() + " Theme Points per second");
-    $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
+    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toPrecision(5) + " Theme Points per second");
+    $("#themingPointText").text("You have " + themingArray[1].toPrecision(5) + " Theme Points");
 }
 // Function to update the length buyable buttons with their current cost and count
 function updateThemingBuyables() {
@@ -32,7 +32,7 @@ function buyThemingBuyable(value) {
         let newCost = themingArray[value].startCost.times(themingArray[value].exponent.pow(themingArray[value].count)); // Calculate new cost
         themingArray[value].cost = newCost; // Update cost
         updateThemingBuyables(); // Update the buyable UI
-        giveBuyableEffect(value-2);
+        giveBuyableEffect(value-4);
         saveGame();
     }
     themingArray[value].cost = themingArray[value].startCost.times(themingArray[value].exponent.pow(themingArray[value].count)); // Calculate new cost
