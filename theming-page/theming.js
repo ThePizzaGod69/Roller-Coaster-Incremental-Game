@@ -8,19 +8,19 @@ function themesReset(){
 }
 // Function to update the length of the coaster
 function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[4]))
-    $("#themingResetButton").html("Get a Theme"+"\n"+"Next at "+themingArray[2].toString()+"Inversions")
-    $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
-    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toString() + " Theme Points per second");
-    $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
+    $("#themingResetButton").html("Get a Theme"+"\n"+"Next at "+themingArray[2].toPrecision(5)+"Inversions")
+    $("#themingText").text("You have " + themingArray[0].toPrecision(5) + " Themes");
+    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toPrecision(5) + " Theme Points per second");
+    $("#themingPointText").text("You have " + themingArray[1].toPrecision(5) + " Theme Points");
 }
 // Function to update the length buyable buttons with their current cost and count
 function updateThemingBuyables() {
-    $("#theme1").html("Tree<br>Cost: " + themingArray[5].cost.toString() + " theme points<br>makes rider gain ^1.4<br>Bought: " + themingArray[5].count.toString());
-    $("#theme2").html("New sign<br>Cost: " + themingArray[6].cost.toString() + " theme points<br>makes rider gain ^1.7<br>Bought: " + themingArray[6].count.toString());
-    $("#theme3").html("Do a promo video<br>Cost: " + themingArray[7].cost.toString() + " theme points<br>makes rider gain ^2.3<br>Bought: " + themingArray[7].count.toString());
-    $("#theme4").html("New paint job<br>Cost: " + themingArray[8].cost.toString() + " theme points<br>base rider gain ^4<br>Bought: " + themingArray[8].count.toString());
-    $("#theme5").html("Do a holiday event<br>Cost: " + themingArray[9].cost.toString() + " theme points<br>base rider gain ^6<br>Bought: " + themingArray[9].count.toString());
-    $("#theme6").html("Change the park name<br>Cost: " + themingArray[10].cost.toString() + " theme points<br>theme point gain ^1.2<br>Bought: " + themingArray[10].count.toString());
+    $("#theme1").html("Tree<br>Cost: " + themingArray[5].cost.toPrecision(5) + " theme points<br>makes rider gain ^1.4<br>Bought: " + themingArray[5].count.toPrecision(5));
+    $("#theme2").html("New sign<br>Cost: " + themingArray[6].cost.toPrecision(5) + " theme points<br>makes theme point gain ^1.1<br>Bought: " + themingArray[6].count.toPrecision(5));
+    $("#theme3").html("Do a promo video<br>Cost: " + themingArray[7].cost.toPrecision(5) + " theme points<br>makes rider gain ^2.3<br>Bought: " + themingArray[7].count.toPrecision(5));
+    $("#theme4").html("New paint job<br>Cost: " + themingArray[8].cost.toPrecision(5) + " theme points<br>base rider gain ^1.3<br>Bought: " + themingArray[8].count.toPrecision(5));
+    $("#theme5").html("Do a holiday event<br>Cost: " + themingArray[9].cost.toPrecision(5) + " theme points<br>base rider gain ^6<br>Bought: " + themingArray[9].count.toPrecision(5));
+    $("#theme6").html("Change the park name<br>Cost: " + themingArray[10].cost.toPrecision(5) + " theme points<br>theme point gain ^1.5<br>Bought: " + themingArray[10].count.toPrecision(5));
     if(themingArray[9]==true){$("#endButton").html("YOU WIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")}
 }
 
@@ -44,24 +44,24 @@ function giveBuyableEffect(buyable){
         riderArray[2]=riderArray[2].times(new Decimal(1.4));
     }
     else if(buyable===2){
-        riderArray[2]=riderArray[2].times(new Decimal(1.7));
+        themingArray[2]=themingArray[2].times(new Decimal(1.1));
     }
     else if(buyable===3){
         riderArray[2]=riderArray[2].times(new Decimal(2.3));
     }
     else if(buyable===4){
-        riderArray[2]=riderArray[2].times(new Decimal(4));
+        themingArray[2]=themingArray[2].times(new Decimal(1.3));
     }
     else if(buyable===5){
         riderArray[2]=riderArray[2].times(new Decimal(6));
     }
     else if(buyable===6){
-        themingArray[2]=themingArray[2].times(new Decimal(1.2));
+        themingArray[2]=themingArray[2].times(new Decimal(1.5));
     }
     saveGame();
 }
 function buyEndUpgrade(){
-    if(themingArray[1].gte(new Decimal(1e10))){
+    if(themingArray[1].gte(new Decimal(1e100))){
         if(themingArray[9]==false){
             themingArray[9]=true;
             saveGame();
