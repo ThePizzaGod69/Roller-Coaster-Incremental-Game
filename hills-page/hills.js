@@ -1,23 +1,3 @@
-function initializeHillUpgrades(){
-    if(hillsArray(5)===true){
-        $("#hill1").html(text2);
-    }
-    if(hillsArray(6)===true){
-        $("#hill2").html(text2);
-    }
-    if(hillsArray(7)===true){
-        $("#hill3").html(text2);
-    }
-    if(hillsArray(8)===true){
-        $("#hill4").html(text2);
-    }
-    if(hillsArray(9)===true){
-        $("#hill5").html(text2);
-    }
-    if(hillsArray(10)===true){
-        $("#hill6").html(text2);
-    }
-}
 //handles the buying of hill upgrades
 function buyHillUpgrade(which, price, text1, text2, thing){
     if(hillsArray[which+4]===false){
@@ -38,7 +18,8 @@ function giveEffect(newUpgrade){
         riderArray[3] = riderArray[3].times(new Decimal(5));
     }
     else if(newUpgrade===6){
-        console.log('need to add this')
+        hillsArray[11]=true;
+        window.location.href = '../inversions-page/inversion.html';
     }
     else{
         riderArray[3] = riderArray[3].times(new Decimal(2));
@@ -85,6 +66,8 @@ loadGame(false);
 updateRiders();
 hillsDisplay();
 updateHills();
+hideStuff();
+
 window.setInterval(function(){
     useAutobuyers();
     incrementRiders();

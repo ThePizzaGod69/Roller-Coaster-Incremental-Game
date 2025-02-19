@@ -1,6 +1,5 @@
 function inversionsReset(){
     if(hillsArray[0].gte(inversionArray[2])){
-        hillsArray[0].minus(inversionArray[2]);
         inversionArray[0]=inversionArray[0].plus(new Decimal(1));
         saveGame();
         updateInversions();
@@ -18,7 +17,7 @@ function updateInversionBuyables() {
 }
 function updateInversions(){
     inversionArray[2]=inversionArray[1].times(inversionArray[4].pow(inversionArray[0]));
-    $("#inversionsResetButton").text("Reset Previous progress for an Inversion"+"\n"+"Next at: "+inversionArray[2].toPrecision(5)+" Hills");
+    $("#inversionsResetButton").text("Get an Inversion"+"\n"+"Next at: "+inversionArray[2].toPrecision(5)+" Hills");
 }
 function inversionsDisplay(){
     $("#inversionText").html("Your Coaster has "+inversionArray[0].toPrecision(5)+" Inversions")
@@ -74,13 +73,17 @@ function giveBuyableEffect(buyable){
     }
     saveGame();
 }
-let inversionUpgrade = {
-    text:"Press here to unlock themes<br>Requires 100 inversions",
+function buyInversionUpgrade(){
+    if((inversionArray[0]).gt(new Decimal(30))){
+        hillsArray[13]=true;
+        window.location.href = '../theming-page/theming.html';
+    }
 }
 loadGame(false);
 updateRiders();
 updateInversionBuyables();
 inversionsDisplay();
+hideStuff();
 window.setInterval(function(){
     useAutobuyers();
     incrementRiders();

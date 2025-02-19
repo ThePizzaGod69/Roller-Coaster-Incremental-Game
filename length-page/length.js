@@ -4,7 +4,8 @@ function buyLengthUpgrade(){
     if(lengthArray[0].gte(new Decimal(500))==true){
         if(lengthArray[7]==false){
             lengthArray[7]=true;
-
+            hillsArray[12]=true;
+            window.location.href = '../hills-page/hills.html';
             saveGame();
         }
     }
@@ -30,6 +31,7 @@ loadGame(false);
 updateRiders();
 updateLength();
 updateLengthBuyables();
+hideStuff();
 // Update the game state 10 times every second
 window.setInterval(function(){
     useAutobuyers();

@@ -2,35 +2,63 @@ let riderArray = [];
 let lengthArray = [];
 let hillsArray = [];
 let inversionArray = [];
-let themingArray = []
-let fullData = {};
+let themingArray = [];
+function hideStuff(){
+    if(hillsArray[13]===false){
+        $("#themesNavButton").hide()
+    }
+    if(hillsArray[11]==false){
+        $("#inversionsNavButton").hide()
+    }
+    if(hillsArray[12]==false){
+        $("#hillsNavButton").hide()
+    }
 
+}
 function useAutobuyers(){
-    if(inversionArray[11].autobuyer1===true){
-        buyLengthBuyable(1);
-    }
-    if(inversionArray[11].autobuyer2===true){
-        buyLengthBuyable(2);
-    }
-    if(inversionArray[11].autobuyer3===true){
-        buyLengthBuyable(3);
-    }
-    if(inversionArray[11].autobuyer4===true){
-        buyLengthBuyable(4);
+    if(inversionArray[11].autobuyer6===true){
+        while(riderArray[0].gte(lengthArray[6].cost) && lengthArray[6].count.lt(new Decimal(10000))){
+        buyLengthBuyable(6);}
+        //so the game does not explode trying to buy a billion buyables
     }
     if(inversionArray[11].autobuyer5===true){
+        while(riderArray[0].gte(lengthArray[5].cost) && lengthArray[5].count.lt(new Decimal(10000))){
         buyLengthBuyable(5);
+        }
+        //so the game does not explode trying to buy a billion buyables
     }
-    if(inversionArray[11].autobuyer6===true){
-        buyLengthBuyable(6);
+    if(inversionArray[11].autobuyer4===true){
+        while(riderArray[0].gte(lengthArray[4].cost) && lengthArray[4].count.lt(new Decimal(10000))){
+        buyLengthBuyable(4);
+        }
+        //so the game does not explode trying to buy a billion buyables
     }
+    if(inversionArray[11].autobuyer3===true){
+        while(riderArray[0].gte(lengthArray[3].cost) && lengthArray[3].count.lt(new Decimal(10000))){
+        buyLengthBuyable(3);
+        }
+        //so the game does not explode trying to buy a billion buyables
+    }
+    if(inversionArray[11].autobuyer2===true){
+        while(riderArray[0].gte(lengthArray[2].cost) && lengthArray[2].count.lt(new Decimal(10000))){
+        buyLengthBuyable(2);
+        }
+        //so the game does not explode trying to buy a billion buyables
+    }
+    if(inversionArray[11].autobuyer1===true){
+        while(riderArray[0].gte(lengthArray[1].cost) && lengthArray[1].count.lt(new Decimal(10000))){
+        buyLengthBuyable(1);
+        }
+        //so the game does not explode trying to buy a billion buyables
+    }
+     
 }
 
 function incrementRiders() {
     riderArray[1] = lengthArray[0].plus(new Decimal(1));
-
     riderArray[4] = riderArray[1].pow(riderArray[2]).times(riderArray[3]);
-    riderArray[4] = riderArray[4].times(hillsArray[0].pow(new Decimal(3)))
+    //gives boost based on hills
+    riderArray[4] = riderArray[4].times((hillsArray[0].plus(new Decimal(1))).pow(new Decimal(3)))
     // make number go up
     riderArray[0] = riderArray[0].plus(riderArray[4].times(new Decimal(0.1)));
 }
@@ -168,11 +196,11 @@ function deleteSave(){
             ];
 
         hillsArray=[
-            new Decimal(100),//hills count[0]
+            new Decimal(0),//hills count[0]
             new Decimal(500),//base cost of hills[1]
             new Decimal(500),//current hill cost[2]
             new Decimal(0),//hill gain[3]
-            new Decimal(1.1),//hill cost increase exponent[4]
+            new Decimal(1.05),//hill cost increase exponent[4]
             false,//if you have hill upgrade 1[5]
             false,//if you have hill upgrade 2[6]
             false,//if you have hill upgrade 3[7]
@@ -180,16 +208,18 @@ function deleteSave(){
             false,//if you have hill upgrade 5[9]
             false,//if you have hill upgrade 6[10]
             false,//if you have inversions unlocked[11]
+            false,//when hills has been unlocked[12]
+            false,//when themes has been unlocked[13]
         ];
         inversionArray=[
-            new Decimal(7),//inversion count[0]
+            new Decimal(0),//inversion count[0]
             new Decimal(20),//base cost of inversions[1]
             new Decimal(20),//current inversion cost[2]
             new Decimal(0),//inversion gain[3]
-            new Decimal(1.1),//inversion cost increase exponent[4]
+            new Decimal(1.05),//inversion cost increase exponent[4]
         
             {//inversion buyable one stats[5]
-            count: new Decimal(1000),
+            count: new Decimal(0),
             startCost: new Decimal(1),
             cost: new Decimal(1),
             exponent: new Decimal(1.1),
@@ -234,54 +264,56 @@ function deleteSave(){
             }
         ];
         themingArray=[
-            new Decimal(1e11),//themes(0)
-            new Decimal(0),//theme points
-            new Decimal(1),//exponent applied to themes to generate theme points
-            {//buyable 1 stuff(1)
+            new Decimal(0),//themes(0)
+            new Decimal(0),//theme points(1)
+            new Decimal(30),//theme cost(2)
+            new Decimal(1.05),//theme point cost exponent(3)
+            new Decimal(1),//exponent applied to themes to generate theme points(4)
+            {//buyable 1 stuff(5)
                 count: new Decimal(0),
                 startCost: new Decimal(30),
                 cost: new Decimal(30),
                 exponent: new Decimal(1.05)},
-                //buyable 2 stuff(2)
-            {
+            {//buyable 2 stuff(6)
                 count: new Decimal(0),
                 startCost: new Decimal(250),
                 cost: new Decimal(250),
-                exponent: new Decimal(1.1)},
-                //buyable 3 stuff(3)
-            {
+                exponent: new Decimal(1.1)},         
+            {//buyable 3 stuff(7)
                 count: new Decimal(0),
                 startCost: new Decimal(1000),
                 cost: new Decimal(1000),
                 exponent: new Decimal(1.18)},
-                //buyable 4 stuff(4)
-            {
+            {//buyable 4 stuff(8)
                 count: new Decimal(0),
                 startCost: new Decimal(10000),
                 cost: new Decimal(10000),
-                exponent: new Decimal(1.26)},
-                //buyable 5 stuff(1)
-            {
+                exponent: new Decimal(1.26)},       
+            {//buyable 5 stuff(9)
                 count: new Decimal(0),
                 startCost: new Decimal(100000),
                 cost: new Decimal(100000),
                 exponent: new Decimal(1.3)},
-                //buyable 6 stuff(1)
-            {
+            {//buyable 6 stuff(10)
                 count: new Decimal(0),
                 startCost: new Decimal(1000000),
                 cost: new Decimal(1000000),
-                exponent: new Decimal(1.4)},
-                //final upgrade
-            false
+                exponent: new Decimal(2)},     
+            false//final upgrade value
             ]
+}
+//resets the game
+function resetGame(){
+  deleteSave();
+  saveGame();
+  window.location.href = '../length-page/length.html';
 }
 // Function to handle buying length buyables, and is on the main js page so autobuyers work
 function buyLengthBuyable(value) {
     if (riderArray[0].gte(lengthArray[value].cost)==true) {
         riderArray[0] = riderArray[0].minus(lengthArray[value].cost); // Take away riders
         lengthArray[value].count = lengthArray[value].count.plus(new Decimal(1)); // Increment count
-        lengthArray[0] = lengthArray[0].plus(lengthArray[value].adder); // Increase length by 1 meter
+        lengthArray[0] = lengthArray[0].plus(lengthArray[value].adder); // Increase length by the correct amount
         let newCost = lengthArray[value].startCost.times(lengthArray[value].exponent.pow(lengthArray[value].count)); // Calculate new cost
         lengthArray[value].cost = newCost; // Update cost
         if (window.location.pathname == "/length.html"){updateLengthBuyables()}; // Update the buyable UI
@@ -298,14 +330,14 @@ function fixLength(){
 function loadGame(fromImport) {
     let theTester;//used console logs to determine that I needed to define theTester before the conditionals
     if(fromImport === true){
+        //imports the value from the input box if you are importing
         const yourMom =$("#goodBox").val();
-        console.log(yourMom);
-
         theTester=JSON.parse(yourMom)
     }
     else{
         theTester=JSON.parse(localStorage.getItem("everything"))
     }
+    //makes sure that theTester was successfully created
     if (theTester) {
         fullData=theTester;
 

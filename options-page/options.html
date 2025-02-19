@@ -20,20 +20,23 @@
   </header>
   <nav id="topButtons">
     <a href="../length-page/length.html" onclick="saveGame()"><button>length</button></a>
-    <a href="../hills-page/hills.html" onclick="saveGame()"><button>hills</button></a>
-    <a href="../inversions-page/inversions.html" onclick="saveGame()"><button>inversions</button></a>
-    <a href="../theming-page/theming.html" onclick="saveGame()"><button>theming</button></a>
+    <a id="hillsNavButton" href="../hills-page/hills.html" onclick="saveGame()"><button>hills</button></a>
+    <a id="inversionsNavButton" href="../inversions-page/inversions.html" onclick="saveGame()"><button>inversions</button></a>
+    <a id="themesNavButton" href="../theming-page/theming.html" onclick="saveGame()"><button>theming</button></a>
     <a><button id="optionsButton">options</button></a>
   </nav>
 <body>
 
   <div id="optionButtons">
-    <button id="saveDelete" onclick="deleteSave()">Click this to delete your save</button>
+    <button id="saveDelete" onclick="resetGame()">Click this to delete your save</button>
   </div>
 
   <form id="inAndOut">
     <input type="button" id="import" value="Import" onclick="loadGame(true)">
     <input type="button" id="export" value="Export" onclick="exportGame()">
+  </form>
+  <br>
+  <form>
     <input type="text" id="goodBox" value="saves will be input or exported here">
   </form>
 </body>
