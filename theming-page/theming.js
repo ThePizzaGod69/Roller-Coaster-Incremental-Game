@@ -60,13 +60,12 @@ function giveBuyableEffect(buyable){
     saveGame();
 }
 function buyEndUpgrade(){
-    if(themingArray[1].gte(new Decimal(ee100))){
-        if(themingArray[11]==false){
+
             themingArray[11]=true;
             saveGame();
 
-        }
-    }
+        
+    
 }
 
 loadGame(false);
