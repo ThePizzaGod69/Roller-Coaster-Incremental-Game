@@ -302,6 +302,12 @@ function deleteSave(){
             false//final upgrade value
             ]
 }
+//resets the game
+function resetGame(){
+  deleteSave();
+  saveGame();
+  window.location.href = '../length-page/length.html';
+}
 // Function to handle buying length buyables, and is on the main js page so autobuyers work
 function buyLengthBuyable(value) {
     if (riderArray[0].gte(lengthArray[value].cost)==true) {
