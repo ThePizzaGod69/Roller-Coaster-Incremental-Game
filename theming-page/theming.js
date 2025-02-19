@@ -9,7 +9,7 @@ function themesReset(){
 // Function to update the length of the coaster
 function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[4]))
     $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
-    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[2]).toString() + " Theme Points per second");
+    $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[4]).toString() + " Theme Points per second");
     $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
 }
 // Function to update the length buyable buttons with their current cost and count
@@ -23,7 +23,7 @@ function updateThemingBuyables() {
     if(themingArray[9]==true){$("#endButton").html("YOU WIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")}
 }
 
-// Function to handle buying a length buyable (1 meter)
+// Function to handle buying any theming buyable
 function buyThemingBuyable(value) {
     if (themingArray[1].gte(themingArray[value].cost)==true) {
         themingArray[1] = themingArray[1].minus(themingArray[value].cost); // Take away riders
@@ -74,6 +74,7 @@ updateRiders();
 updateTheming();
 updateThemingBuyables();
 window.setInterval(function(){
+    useAutobuyers();
     incrementRiders();
     updateRiders();
     updateTheming();
