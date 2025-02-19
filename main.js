@@ -196,7 +196,7 @@ function deleteSave(){
             ];
 
         hillsArray=[
-            new Decimal(100),//hills count[0]
+            new Decimal(0),//hills count[0]
             new Decimal(500),//base cost of hills[1]
             new Decimal(500),//current hill cost[2]
             new Decimal(0),//hill gain[3]
@@ -209,10 +209,10 @@ function deleteSave(){
             false,//if you have hill upgrade 6[10]
             true,//if you have inversions unlocked[11]
             true,//when hills has been unlocked[12]
-            true,//when themes has been unlocked[13]
+            false,//when themes has been unlocked[13]
         ];
         inversionArray=[
-            new Decimal(30),//inversion count[0]
+            new Decimal(0),//inversion count[0]
             new Decimal(20),//base cost of inversions[1]
             new Decimal(20),//current inversion cost[2]
             new Decimal(0),//inversion gain[3]
