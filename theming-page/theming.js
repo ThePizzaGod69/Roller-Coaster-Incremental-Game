@@ -1,13 +1,13 @@
 function themesReset(){
     if(inversionArray[0].gte(themingArray[2])){
         themingArray[0]=themingArray[0].plus(new Decimal(1));
-        themingArray[2]=(new Decimal(30)).times(themingArray[3].pow[themingArray[0]])
+        themingArray[2]=(new Decimal(30)).times(themingArray[3].pow(themingArray[0]))
         saveGame();
         updateTheming();
     }
 }
 // Function to update the length of the coaster
-function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[2]))
+function updateTheming() {themingArray[1]=themingArray[1].plus(themingArray[0].pow(themingArray[4]))
     $("#themingText").text("You have " + themingArray[0].toString() + " Themes");
     $("#themingGainText").text("You are getting " + themingArray[0].pow(themingArray[2]).toString() + " Theme Points per second");
     $("#themingPointText").text("You have " + themingArray[1].toString() + " Theme Points");
