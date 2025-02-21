@@ -19,7 +19,7 @@ function giveEffect(newUpgrade){
     }
     else if(newUpgrade===6){
         hillsArray[11]=true;
-        window.location.href = '../inversions-page/inversion.html';
+        window.location.href = '../inversions-page/inversions.html';
     }
     else{
         riderArray[3] = riderArray[3].times(new Decimal(2));
